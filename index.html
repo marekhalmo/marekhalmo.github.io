@@ -65,7 +65,7 @@
 	// http://www.maniacs.sk/cast/index.html
 	
     const context = cast.framework.CastReceiverContext.getInstance();
-
+/*
     // Get the video element
     const video = document.getElementById('video');
 
@@ -88,16 +88,16 @@
       const messageEl = document.querySelector('.welcomme');      
 	  messageEl.style.display = 'flex';
     });
-	
+	*/
 	
 	// Add a message listener to handle incoming messages
     context.addCustomMessageListener('urn:x-cast:com.example.custom', function(event) {
       // Get the message data from the event
-      const message = event.data;
+	  //const message = event.data;
 
       // Update the text message with the received data
       const messageEl = document.querySelector('.message');
-      messageEl.textContent = message;
+      messageEl.textContent = "turums tu rum tututu";
 	  console.log("Tam tam taaam");
     });
 	
