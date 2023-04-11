@@ -33,8 +33,6 @@
   </style>
 </head>
 <body>
-
-
   <!-- The video player -->
   <!--video id="video" controls autoplay></video-->
   
@@ -43,7 +41,7 @@
 	<div class="bg bg2"></div>
 	<div class="bg bg3"></div>
 	<div class="content">
-	  <h1 class="message">Vitajte</h1>
+	  <h1 class="message">...</h1>
 	  <p>Začíname už o chvíľu!</p>
 	</div>
   </div>
@@ -60,11 +58,30 @@
   <!-- Initialize the CastReceiverContext -->
   <script type="text/javascript">
     // Create a CastReceiverContext
+    const context = cast.framework.CastReceiverContext.getInstance();
 	
 	// https://marekhalmo.github.io/index.html
 	// http://www.maniacs.sk/cast/index.html
+	// Enable debug mode
+    context.setLoggerLevel(cast.framework.LoggerLevel.DEBUG);
+
+    // Add a message listener to handle incoming messages
+    context.addCustomMessageListener('urn:x-cast:com.example.custom', function(event) {
+      // Get the message data from the event
+      const message = event.data;
+
+      // Update the text message with the received data
+      const messageEl = document.querySelector('.message');
+      messageEl.textContent = message;
+    });
 	
-    const context = cast.framework.CastReceiverContext.getInstance();
+	
+	const messageEl = document.querySelector('.message');
+      messageEl.textContent = "Ready!";
+
+    // Start the receiver
+    context.start();
+	
 /*
     // Get the video element
     const video = document.getElementById('video');
@@ -89,7 +106,7 @@
 	  messageEl.style.display = 'flex';
     });
 	*/
-	
+	/*
 	// Add a message listener to handle incoming messages
     context.addCustomMessageListener('urn:x-cast:com.example.custom', function(event) {
       // Get the message data from the event
@@ -101,9 +118,14 @@
 	  console.log("Tam tam taaam");
     });
 	
+	
+	const messageEl = document.querySelector('.message');
+    messageEl.textContent = "Uitajte!";
+	
 
     // Start the receiver
     context.start();
+	*/
   </script>
 </body>
 </html>
