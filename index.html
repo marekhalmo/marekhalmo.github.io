@@ -65,8 +65,19 @@
 	// Enable debug mode
     context.setLoggerLevel(cast.framework.LoggerLevel.DEBUG);
 
+	context.addCustomMessageListener('urn:x-cast:com.example.custom', event => {
+		//context.sendFeedbackMessage("Custom message received!");
+		  // Get the message data from the event
+		  const message = event.data;
+
+		  // Update the text message with the received data
+		  const messageElement = document.querySelector('.message');
+		  messageElement.textContent = "BBBBB";//message;
+	});
+
     // Add a message listener to handle incoming messages
     context.addCustomMessageListener('urn:x-cast:com.example.custom', function(event) {
+	  context.sendFeedbackMessage("Custom message received!");
       // Get the message data from the event
       const message = event.data;
 
@@ -82,6 +93,7 @@
     // Start the receiver
     context.start();
 	
+	context.sendFeedbackMessage("Ready!");
 /*
     // Get the video element
     const video = document.getElementById('video');
