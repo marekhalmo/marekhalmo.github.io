@@ -65,7 +65,7 @@
 	// Enable debug mode
     context.setLoggerLevel(cast.framework.LoggerLevel.DEBUG);
 
-	context.addCustomMessageListener('urn:x-cast:com.example.custom', event => {
+	context.addCustomMessageListener('com.example.custom', event => {
 		//context.sendFeedbackMessage("Custom message received!");
 		  // Get the message data from the event
 		  const message = event.data;
@@ -76,7 +76,7 @@
 	});
 
     // Add a message listener to handle incoming messages
-    context.addCustomMessageListener('urn:x-cast:com.example.custom', function(event) {
+    context.addCustomMessageListener('com.example.custom', function(event) {
 	  context.sendFeedbackMessage("Custom message received!");
       // Get the message data from the event
       const message = event.data;
