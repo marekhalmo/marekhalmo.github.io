@@ -1,6 +1,7 @@
 const context = cast.framework.CastReceiverContext.getInstance();
 const playerManager = context.getPlayerManager();
 
+
 //Media Sample API Values
 const SAMPLE_URL = "https://storage.googleapis.com/cpe-sample-media/content.json";
 const StreamType = {
@@ -17,7 +18,7 @@ const LOG_TAG = 'MyAPP.LOG';
 castDebugLogger.setEnabled(true);
 
 // Show debug overlay
-// castDebugLogger.showDebugLogs(true);
+//castDebugLogger.showDebugLogs(true);
 
 // Set verbosity level for Core events.
 castDebugLogger.loggerLevelByEvents = {
@@ -151,5 +152,6 @@ playerDataBinder.addEventListener(
       cast.framework.ui.ControlsButton.SEEK_BACKWARD_30
     );
   });
+
 
 context.start();
