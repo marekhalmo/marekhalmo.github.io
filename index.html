@@ -60,6 +60,10 @@
   <!-- Initialize the CastReceiverContext -->
   <script type="text/javascript">
     // Create a CastReceiverContext
+	
+	// https://marekhalmo.github.io/index.html
+	// http://www.maniacs.sk/cast/index.html
+	
     const context = cast.framework.CastReceiverContext.getInstance();
 
     // Get the video element
@@ -85,7 +89,7 @@
 	  messageEl.style.display = 'flex';
     });
 	
-	/*
+	
 	// Add a message listener to handle incoming messages
     context.addCustomMessageListener('urn:x-cast:com.example.custom', function(event) {
       // Get the message data from the event
@@ -96,7 +100,7 @@
       messageEl.textContent = message;
 	  console.log("Tam tam taaam");
     });
-	*/
+	
 
     // Start the receiver
     context.start();
