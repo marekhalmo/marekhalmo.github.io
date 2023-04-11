@@ -71,13 +71,13 @@
       const message = event.data;
 
       // Update the text message with the received data
-      const messageEl = document.querySelector('.message');
-      messageEl.textContent = message;
+      const messageElement = document.querySelector('.message');
+      messageElement.textContent = "BBBBB";//message;
     });
 	
 	
 	const messageEl = document.querySelector('.message');
-      messageEl.textContent = "Ready!";
+    messageEl.textContent = "Ready!";
 
     // Start the receiver
     context.start();
