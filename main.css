@@ -44,7 +44,7 @@ body {
   animation-duration:18s;
 }
 
-.content {
+.centered {
   #background-color:rgba(255,255,255,.8);
   #border-radius:.25em;
   #box-shadow:0 0 .25em rgba(0,0,0,.25);
@@ -56,9 +56,9 @@ body {
   top:50%;
   transform:translate(-50%, -50%);
   color: white;
+  width: 80%;
   
   #font-style: additive;
-  
 }
 
 h1 {
@@ -80,6 +80,26 @@ p {
   margin-top: -1em;
 }
 
+.verse:first-letter {
+   margin-left: 1em;
+}
+
+.verses {
+	font-size: 3em
+}
+
+.verse {
+	text-align: justify;
+}
+
+.source {
+	text-align: right;
+	position: absolute;
+    bottom: 0;
+    right: 0;
+	padding: 0 1em 1em 0;
+}
+
 @keyframes slide {
   0% {
     transform:translateX(-25%);
@@ -87,4 +107,8 @@ p {
   100% {
     transform:translateX(25%);
   }
+}
+
+.hidden {
+	display: none;
 }
