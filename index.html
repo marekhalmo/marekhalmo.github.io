@@ -82,6 +82,7 @@
 		  messageElement.textContent = "BBBBB";//message;
 	});
 	*/
+	/*
 	context.addCustomMessageListener('urn:x-cast:sk.maniacs.versecast', function(event) {
       // Get the message data from the event
       const message = event.data;
@@ -90,10 +91,11 @@
       const messageElement = document.querySelector('.message');
 	  messageElement.textContent = message.msg;
     });
+	*/
 	
-	
-	const messageEl = document.querySelector('.message');
+	const messageEl = document.querySelector('.title');
     messageEl.textContent = "Welcome";
+	
 
     // Start the receiver
     context.start();
