@@ -71,7 +71,7 @@
 	// Enable debug mode
     context.setLoggerLevel(cast.framework.LoggerLevel.DEBUG);
 
-/*
+
 	context.addCustomMessageListener('urn:x-cast:sk.maniacs.versecast', event => {
 		//context.sendFeedbackMessage("Custom message received!");
 		  // Get the message data from the event
@@ -81,7 +81,7 @@
 		  const messageElement = document.querySelector('.message');
 		  messageElement.textContent = "BBBBB";//message;
 	});
-	*/
+	
 	
 	context.addCustomMessageListener('urn:x-cast:sk.maniacs.versecast', function(event) {
       // Get the message data from the event
