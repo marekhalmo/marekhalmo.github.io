@@ -82,7 +82,20 @@
 		  messageElement.textContent = "BBBBB";//message;
 	});
 */
-	
+
+	const playerManager = context.getPlayerManager();
+
+    // Handle incoming messages
+    playerManager.setMessageInterceptor(
+      cast.framework.messages.MessageType.LOAD,
+      request => {
+        if (request.customData && request.customData.message) {
+          document.getElementById('message').innerHTML = request.customData.message;
+        }
+      }
+    );
+
+	/*
 	context.addCustomMessageListener('urn:x-cast:sk.maniacs.versecast', function(event) {
       // Get the message data from the event
       const message = event.data;
@@ -91,7 +104,7 @@
       const messageElement = document.querySelector('.message');
 	  messageElement.textContent = message.msg;
     });
-	
+	*/
 	
 	const messageEl = document.querySelector('.title');
     messageEl.textContent = "Welcome";
