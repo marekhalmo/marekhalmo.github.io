@@ -35,6 +35,7 @@
 <body>
   <!-- The video player -->
   <!--video id="video" controls autoplay></video-->
+  <!--cast-media-player style="display: none"></cast-media-player-->
   <cast-media-player></cast-media-player>
   
   <div class="welcomme">
@@ -91,7 +92,7 @@
       cast.framework.messages.MessageType.LOAD,
       request => {
         if (request.customData && request.customData.message) {
-          document.getElementById('message').innerHTML = request.customData.message;
+          document.getElementById('message').textContent = request.customData.message;
         }
       }
     );
