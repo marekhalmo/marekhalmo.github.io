@@ -91,6 +91,7 @@
     playerManager.setMessageInterceptor(
       cast.framework.messages.MessageType.LOAD,
       request => {
+	  document.getElementById('message').textContent = "Prislo!"
         if (request.customData && request.customData.message) {
           document.getElementById('message').textContent = request.customData.message;
         }
