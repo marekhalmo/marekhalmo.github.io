@@ -43,9 +43,9 @@
         <div class="bg"></div>
         <div class="bg bg2"></div>
         <div class="bg bg3"></div>
-        <div class="centered welcome">
-            <h1 class="title">VerseCast</h1>
-            <p class="message">Loading...</p>
+        <div id="welcome" class="centered">
+            <h1 id="title">VerseCast</h1>
+            <p id="message">Loading...</p>
         </div>
     </div>
 
@@ -140,7 +140,6 @@
 	  messageElement.textContent = message.msg;
     });
 	*/
-	debug("3");
 	const messageEl = document.getElementById('message');
     messageEl.textContent = "Present verses with Chromecast!";
 
