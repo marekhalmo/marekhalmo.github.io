@@ -43,14 +43,14 @@
 	<div class="bg bg2"></div>
 	<div class="bg bg3"></div>
 	<div class="centered welcome">
-		<h1 class="title">...</h1>
-		<p class="message">Present verses on chromecast!</p>
+		<h1 class="title">VerseCast</h1>
+		<p class="message">Loading...</p>
 	</div>
 	<div class="verses hidden">
 			<div class="centered verse">Demo verse (ščťžýáíé´äô)</div>
 			<div class="source">None 1:1‭-‬10 TSTB</div>
 	</div>
-	<div class="debug">Debug</div>
+	<div class="debug hidden">Debug</div>
   </div>
   
   
@@ -104,7 +104,6 @@
 	function debug(str) {
 		document.querySelector('.debug').innerHTML = document.querySelector('.debug').innerHTML + "<br><br>"
 		+ str;
-			// Statements
 	}
 	
 	const playerManager = context.getPlayerManager();
@@ -117,11 +116,15 @@
 			const customDataStr = JSON.stringify(request.media.customData);
 			debug("CustomData: " + customDataStr);
 			
-			const customData = JSON.parse(request.media.customData);
+			const customData = JSON.parse(customDataStr);
 			debug("CustomData obj: " + JSON.stringify(customData));
 			
 			//const customData = request.media.customData;		
 			debug("...PARSED...");
+			
+			if(customData.debug) {
+				document.querySelector('.debug').classList.remove('hidden');
+			}
 			
 			if(customData.verse) {
 				document.querySelector('.verse').textContent = customData.verse;
@@ -150,8 +153,8 @@
     });
 	*/
 	
-	const messageEl = document.querySelector('.title');
-    messageEl.textContent = "VerseCast";
+	const messageEl = document.querySelector('.message');
+    messageEl.textContent = "Present verses with Chromecast!";
 	
 
     // Start the receiver
