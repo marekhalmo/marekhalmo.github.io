@@ -106,19 +106,19 @@
 		+ str;
 			// Statements
 	}
+	
+	function 
 
 	const playerManager = context.getPlayerManager();
 
     // Handle incoming messages
     playerManager.setMessageInterceptor(
       cast.framework.messages.MessageType.LOAD,
-      request => {
-		
-		
+      request => {		
         if (request.media && request.media.customData) {
 			debug("CustomData: " + JSON.stringify(request.media.customData));
 			
-			const customData = JSON.parse(reqest.media.customData);		
+			const customData = reqest.media.customData;		
 			debug("...PARSED...");
 			
 			if(customData.verse) {
