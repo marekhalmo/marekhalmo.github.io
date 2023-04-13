@@ -37,22 +37,24 @@
   <!--video id="video">controls autoplay</video-->
   <!--cast-media-player style="display: none"></cast-media-player-->
   <cast-media-player></cast-media-player>
-  
-  <div class="welcomme">
-   	<div class="bg"></div>
-	<div class="bg bg2"></div>
-	<div class="bg bg3"></div>
-	<div class="centered welcome">
-		<h1 class="title">VerseCast</h1>
-		<p class="message">Loading...</p>
-	</div>
-	<div class="verses hidden">
-			<div class="centered verse">Demo verse (ščťžýáíé´äô)</div>
-			<div class="source">None 1:1‭-‬10 TSTB</div>
-	</div>
-	<div class="debug hidden">Debug</div>
-  </div>
-  
+
+    <div id="black" class="dimable"></div>
+    <div id="splash" class="dimable">
+        <div class="bg"></div>
+        <div class="bg bg2"></div>
+        <div class="bg bg3"></div>
+        <div class="centered welcome">
+            <h1 class="title">VerseCast</h1>
+            <p class="message">Loading...</p>
+        </div>
+    </div>
+
+    <div id="verses" class="dimable">
+        <div id="verse" class="centered">Demo verse (ščťžýáíé´äô)</div>
+        <div id="source">None 1:1‭-‬10 TSTB</div>
+    </div>
+
+    <div id="debug">Debug</div>
   
   
   <!-- The text message to display -->
@@ -63,6 +65,7 @@
   
   <!-- Include the Cast Receiver SDK -->
   <script type="text/javascript" src="//www.gstatic.com/cast/sdk/libs/caf_receiver/v3/cast_receiver_framework.js"></script>
+  <script type="text/javascript" src="ui.js"></script>
   
   <!-- Initialize the CastReceiverContext -->
   <script type="text/javascript">
@@ -71,21 +74,9 @@
 	
 	// https://marekhalmo.github.io/index.html
 	// http://www.maniacs.sk/cast/index.html
-	// Enable debug mode
-    // context.setLoggerLevel(cast.framework.LoggerLevel.DEBUG);
 
-/*
-	context.addCustomMessageListener('urn:x-cast:sk.maniacs.versecast', event => {
-		//context.sendFeedbackMessage("Custom message received!");
-		  // Get the message data from the event
-		  const message = event.data;
-
-		  // Update the text message with the received data
-		  const messageElement = document.querySelector('.message');
-		  messageElement.textContent = "BBBBB";//message;
-	});
-*/
-	/* send json like this to display message
+	/*
+	// send json like this to display message
 	{
 	   "media":{
 		  "contentId":"bbb",
@@ -101,11 +92,6 @@
 	}
 	*/
 
-	function debug(str) {
-		document.querySelector('.debug').innerHTML = document.querySelector('.debug').innerHTML + "<br><br>"
-		+ str;
-	}
-	
 	const playerManager = context.getPlayerManager();
 
     // Handle incoming messages
@@ -118,26 +104,26 @@
 			
 			const customData = JSON.parse(customDataStr);
 			debug("CustomData obj: " + JSON.stringify(customData));
-			
-			//const customData = request.media.customData;		
+
 			debug("...PARSED...");
 			
 			if(customData.debug) {
-				document.querySelector('.debug').classList.remove('hidden');
+				document.getElementById('debug').classList.remove('hidden');
 			}
 			
 			if(customData.verse) {
-				document.querySelector('.verse').textContent = customData.verse;
+				document.getElementById('verse').textContent = customData.verse;
 			}
 				
 			if(customData.source) {
-				document.querySelector('.source').textContent = customData.source;
+				document.getElementById('source').textContent = customData.source;
 			}
 			
 			debug("...DONE");
-			
-			document.querySelector('.welcome').classList.add('hidden');
-			document.querySelector('.verses').classList.remove('hidden');
+
+			fadeToVerse();
+			//document.getElementById('welcome').classList.add('hidden');
+			//document.querySelector('verses').classList.remove('hidden');
         }
       }
     );
@@ -155,10 +141,13 @@
 	
 	const messageEl = document.querySelector('.message');
     messageEl.textContent = "Present verses with Chromecast!";
-	
+
+
 
     // Start the receiver
     context.start();
+
+    debug("Init done...")
 /*
     // Get the video element
     const video = document.getElementById('video');
