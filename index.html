@@ -101,6 +101,11 @@
 	}
 	*/
 
+	function debug(str) {
+		document.querySelector('.debug').innerHTML = document.querySelector('.debug').innerHTML + "<br><br>"
+		+ str;
+			// Statements
+	}
 
 	const playerManager = context.getPlayerManager();
 
@@ -108,16 +113,13 @@
     playerManager.setMessageInterceptor(
       cast.framework.messages.MessageType.LOAD,
       request => {
-		document.querySelector('.debug').innerHTML = document.querySelector('.debug').innerHTML + "<br>"
-		+ "Received: " + JSON.stringify(request);
+		
 		
         if (request.media && request.media.customData) {
-			document.querySelector('.debug').innerHTML = document.querySelector('.debug').innerHTML + "<br>"
-			+ "CustomData: " + JSON.stringify(request.media.customData);
+			debug("CustomData: " + JSON.stringify(request.media.customData));
 			
 			const customData = JSON.parse(reqest.media.customData);		
-			document.querySelector('.debug').innerHTML = document.querySelector('.debug').innerHTML + "<br>"
-			+ "...PARSED...";
+			debug("...PARSED...");
 			
 			if(customData.verse) {
 				document.querySelector('.verse').textContent = customData.verse;
@@ -127,8 +129,7 @@
 				document.querySelector('.source').textContent = customData.source;
 			}
 			
-			document.querySelector('.debug').innerHTML = document.querySelector('.debug').innerHTML + "<br>"
-			+ "...DONE";
+			debug("...DONE");
 			
 			document.querySelector('.welcome').classList.add('hidden');
 			document.querySelector('.verses').classList.remove('hidden');
