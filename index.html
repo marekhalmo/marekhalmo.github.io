@@ -108,6 +108,8 @@
     playerManager.setMessageInterceptor(
       cast.framework.messages.MessageType.LOAD,
       request => {
+		document.querySelector('.debug').textContent = "Received..";
+		
         if (request.media && request.media.customData) {
 			if(request.media.customData.verse) {
 				document.querySelector('.verse').textContent = request.customData.verse;
