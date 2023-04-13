@@ -69,6 +69,8 @@
   
   <!-- Initialize the CastReceiverContext -->
   <script type="text/javascript">
+	showDebug();
+	debug("Starting...");
     // Create a CastReceiverContext
     const context = cast.framework.CastReceiverContext.getInstance();
 	
@@ -91,9 +93,9 @@
 	   "credentials":"testCredentials"
 	}
 	*/
-
+	debug("1");
 	const playerManager = context.getPlayerManager();
-
+	debug("2");
     // Handle incoming messages
     playerManager.setMessageInterceptor(
       cast.framework.messages.MessageType.LOAD,
@@ -127,7 +129,7 @@
         }
       }
     );
-
+	debug("3");
 	/*
 	context.addCustomMessageListener('urn:x-cast:sk.maniacs.versecast', function(event) {
       // Get the message data from the event
@@ -138,13 +140,15 @@
 	  messageElement.textContent = message.msg;
     });
 	*/
-	
-	const messageEl = document.querySelector('.message');
+	debug("3");
+	const messageEl = document.getElementById('message');
     messageEl.textContent = "Present verses with Chromecast!";
 
+	debug("4");
     // Start the receiver
     context.start();
 	
+	debug("5");
 	fadeToSplash();
 
     debug("Init done...")

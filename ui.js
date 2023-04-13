@@ -27,7 +27,7 @@ function showDebug() {
 }
 
 function debug(str) {
-    document.getElementById('debug').innerHTML = document.querySelector('.debug').innerHTML + "<br><br>"
+    document.getElementById('debug').innerHTML = document.getElementById('debug').innerHTML + "<br><br>"
     + str;
 }
 
