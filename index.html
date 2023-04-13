@@ -111,9 +111,13 @@
 		//document.querySelector('.debug').textContent = "Received: " + JSON.stringify(request);
 		
         if (request.media && request.media.customData) {
-			document.querySelector('.debug').textContent = "CustomData: " + JSON.stringify(request.media.customData);
+			document.querySelector('.debug').textContent = document.querySelector('.debug').textContent + "<br>"
+			+ "CustomData: " + JSON.stringify(request.media.customData);
 			
 			const customData = JSON.parse(reqest.media.customData);		
+			document.querySelector('.debug').textContent = document.querySelector('.debug').textContent + "<br>"
+			+ "...PARSED...";
+			
 			if(customData.verse) {
 				document.querySelector('.verse').textContent = customData.verse;
 			}
@@ -122,7 +126,8 @@
 				document.querySelector('.source').textContent = customData.source;
 			}
 			
-			//document.querySelector('.debug').textContent = request.customData;
+			document.querySelector('.debug').textContent = document.querySelector('.debug').textContent + "<br>"
+			+ "...DONE";
 			
 			document.querySelector('.welcome').classList.add('hidden');
 			document.querySelector('.verses').classList.remove('hidden');
