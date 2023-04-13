@@ -11,50 +11,64 @@
   <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet"-->
+
+  <style>
+    /* CSS styles for the text message */
+    .welcomme {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      #font-size: 36px;
+      #font-weight: bold;
+      color: #ffffff;
+      background-color: rgba(0, 0, 0, 0);
+      z-index: 999;
+    }
+	
+  </style>
 </head>
 <body>
-	<!-- The video player -->
-	<!--video id="video">controls autoplay</video-->
-	<!--cast-media-player style="display: none"></cast-media-player-->
-	<cast-media-player></cast-media-player>
- 
-	<!-- Black screen to be displayed if nothing should be shown -->
-	
-	<div id="black" class="dimable enabled">
-	</div>
-	
-	<div id="splash" class="dimable">
-		<div class="bg"></div>
-		<div class="bg bg2"></div>
-		<div class="bg bg3"></div>
-		<div id="welcome" class="centered">
-			<h1 id="title">VerseCast</h1>
-			<p id="message">Loading...</p>
-		</div>
-	</div>
-		
-	<div id="verses" class="dimable">
-		<div id="verse" class="centered">Demo verse (ščťžýáíé´äô)</div>
-		<div id="source">None 1:1‭-‬10 TSTB</div>		
-	</div>
-	
-	<div id="debug" class="hidden">Debug</div>
+  <!-- The video player -->
+  <!--video id="video">controls autoplay</video-->
+  <!--cast-media-player style="display: none"></cast-media-player-->
+  <cast-media-player></cast-media-player>
   
-  	<!-- Include the Cast Receiver SDK -->
-  	<script type="text/javascript" src="//www.gstatic.com/cast/sdk/libs/caf_receiver/v3/cast_receiver_framework.js"></script>
-
-	<!-- UI functions -->
-  	<script type="text/javascript" src="ui.js"></script>
-
-	<!-- CAST Functions -->
-	<script type="text/javascript" src="cast.js"></script>
-
-	<!-- Initialize the CastReceiverContext -->
-	<script type="text/javascript">
+  <div class="welcomme">
+   	<div class="bg"></div>
+	<div class="bg bg2"></div>
+	<div class="bg bg3"></div>
+	<div class="centered welcome">
+		<h1 class="title">...</h1>
+		<p class="message">Present verses on chromecast!</p>
+	</div>
+	<div class="verses hidden">
+			<div class="centered verse">Demo verse (ščťžýáíé´äô)</div>
+			<div class="source">None 1:1‭-‬10 TSTB</div>
+	</div>
+	<div class="debug">Debug</div>
+  </div>
   
-	showDebug();
+  
+  
+  <!-- The text message to display -->
+  <!--div class="message">
+
 	
+	Hello, world!</div-->
+  
+  <!-- Include the Cast Receiver SDK -->
+  <script type="text/javascript" src="//www.gstatic.com/cast/sdk/libs/caf_receiver/v3/cast_receiver_framework.js"></script>
+  
+  <!-- Initialize the CastReceiverContext -->
+  <script type="text/javascript">
     // Create a CastReceiverContext
+    const context = cast.framework.CastReceiverContext.getInstance();
+	
 	// https://marekhalmo.github.io/index.html
 	// http://www.maniacs.sk/cast/index.html
 	// Enable debug mode
@@ -86,15 +100,15 @@
 	   "credentials":"testCredentials"
 	}
 	*/
-	const messageEl = document.getElementById('message');
-    messageEl.textContent = "Bible verses on Chromecast!";
-	fadeToVerse();
 
+	function debug(str) {
+		document.querySelector('.debug').innerHTML = document.querySelector('.debug').innerHTML + "<br><br>"
+		+ str;
+			// Statements
+	}
 	
-	/*
-	const context = cast.framework.CastReceiverContext.getInstance();	
-	const playerManager = context.getPlayerManager();	
-	
+	const playerManager = context.getPlayerManager();
+
     // Handle incoming messages
     playerManager.setMessageInterceptor(
       cast.framework.messages.MessageType.LOAD,
@@ -103,34 +117,27 @@
 			const customDataStr = JSON.stringify(request.media.customData);
 			debug("CustomData: " + customDataStr);
 			
-			const customData = JSON.parse(customDataStr);
+			const customData = JSON.parse(request.media.customData);
 			debug("CustomData obj: " + JSON.stringify(customData));
+			
+			//const customData = request.media.customData;		
 			debug("...PARSED...");
 			
-			if(customData.debug) {
-				showDebug();
-			}
-			
 			if(customData.verse) {
-				document.getElementById('verse').textContent = customData.verse;
+				document.querySelector('.verse').textContent = customData.verse;
 			}
 				
 			if(customData.source) {
-				document.getElementById('source').textContent = customData.source;
-			}
-			
-			if(customData.size) {
-				setSize(customData.size);
+				document.querySelector('.source').textContent = customData.source;
 			}
 			
 			debug("...DONE");
 			
-			fadeToVerse();
-			//displayVerseElement();
+			document.querySelector('.welcome').classList.add('hidden');
+			document.querySelector('.verses').classList.remove('hidden');
         }
       }
     );
-	*/
 
 	/*
 	context.addCustomMessageListener('urn:x-cast:sk.maniacs.versecast', function(event) {
@@ -143,7 +150,12 @@
     });
 	*/
 	
+	const messageEl = document.querySelector('.title');
+    messageEl.textContent = "VerseCast";
+	
 
+    // Start the receiver
+    context.start();
 /*
     // Get the video element
     const video = document.getElementById('video');
