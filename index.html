@@ -11,27 +11,6 @@
   <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet"-->
-
-  <style>
-    /* CSS styles for the text message */
-    /*.welcomme {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      #font-size: 36px;
-      #font-weight: bold;
-      color: #ffffff;
-      background-color: rgba(0, 0, 0, 0);
-      z-index: 999;
-    }
-	*/
-	
-  </style>
 </head>
 <body>
 	<!-- The video player -->
@@ -59,20 +38,19 @@
 		<div id="source">None 1:1‭-‬10 TSTB</div>		
 	</div>
 	
-	<div id="debug" class="hidden">Debug</div>  
+	<div id="debug" class="hidden">Debug</div>
   
-  
-  <!-- The text message to display -->
-  <!--div class="message">
+  	<!-- Include the Cast Receiver SDK -->
+  	<script type="text/javascript" src="//www.gstatic.com/cast/sdk/libs/caf_receiver/v3/cast_receiver_framework.js"></script>
 
-	
-	Hello, world!</div-->
-  
-  <!-- Include the Cast Receiver SDK -->
-  <script type="text/javascript" src="//www.gstatic.com/cast/sdk/libs/caf_receiver/v3/cast_receiver_framework.js"></script>
-  
-  <!-- Initialize the CastReceiverContext -->
-  <script type="text/javascript">
+	<!-- UI functions -->
+  	<script type="text/javascript" src="ui.js"></script>
+
+	<!-- CAST Functions -->
+	<script type="text/javascript" src="cast.js"></script>
+
+	<!-- Initialize the CastReceiverContext -->
+	<script type="text/javascript">
   
 	showDebug();
 	
@@ -108,54 +86,12 @@
 	   "credentials":"testCredentials"
 	}
 	*/
-	
-	function fadeToBlack() {
-		enable("black");
-	}
-	
-	function fadeToSplash() {
-		disable("black");
-		enable("splash");
-		disable("verses");
-	}
-	
-	function fadeToVerse() {		
-		disable("black");
-		disable("splash");
-		enable("verses");
-	}
-	
-	function disable(elementName) {
-		document.getElementById(elementName).classList.remove('enabled');
-	}
-	
-	function enable(elementName) {
-		document.getElementById(elementName).classList.add('enabled');
-	}
-	
-	function showDebug() {
-		document.getElementById('debug').classList.remove('hidden');
-	}
+	const messageEl = document.getElementById('message');
+    messageEl.textContent = "Bible verses on Chromecast!";
+	fadeToVerse();
 
-	function debug(str) {
-		document.getElementById('debug').innerHTML = document.querySelector('.debug').innerHTML + "<br><br>"
-		+ str;
-	}
 	
 	/*
-	function displayVerseElement() {
-		document.getElementById('welcome').classList.add('hidden');
-		document.getElementById('verses').classList.remove('hidden');
-	}
-	*/
-	
-	function setSize(size) {
-		document.getElementById('verses').classList.remove('large');
-		document.getElementById('verses').classList.remove('medium');
-		document.getElementById('verses').classList.remove('small');
-		document.getElementById('verses').classList.add(size);
-	}
-	
 	const context = cast.framework.CastReceiverContext.getInstance();	
 	const playerManager = context.getPlayerManager();	
 	
@@ -194,6 +130,7 @@
         }
       }
     );
+	*/
 
 	/*
 	context.addCustomMessageListener('urn:x-cast:sk.maniacs.versecast', function(event) {
@@ -206,14 +143,7 @@
     });
 	*/
 	
-	const messageEl = document.getElementById('message');
-    messageEl.textContent = "Bible verses on Chromecast!";
-	
 
-    // Start the receiver
-    context.start();
-	
-	fadeToVerse();
 /*
     // Get the video element
     const video = document.getElementById('video');
