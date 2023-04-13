@@ -40,6 +40,7 @@
 	<cast-media-player></cast-media-player>
  
 	<!-- Black screen to be displayed if nothing should be shown -->
+	
 	<div id="black" class="dimable enabled">
 	</div>
 	
@@ -156,9 +157,7 @@
 	}
 	
 	const context = cast.framework.CastReceiverContext.getInstance();	
-	const playerManager = context.getPlayerManager();
-	
-	
+	const playerManager = context.getPlayerManager();	
 	
     // Handle incoming messages
     playerManager.setMessageInterceptor(
@@ -214,7 +213,7 @@
     // Start the receiver
     context.start();
 	
-	fadeToSplash();
+	fadeToVerse();
 /*
     // Get the video element
     const video = document.getElementById('video');
