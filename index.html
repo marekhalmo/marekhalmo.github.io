@@ -114,8 +114,8 @@
       cast.framework.messages.MessageType.LOAD,
       request => {		
         if (request.media && request.media.customData) {
-			//const customDataStr = JSON.stringify(request.media.customData);
-			debug("CustomData: " + request.media.customData);
+			debug("CustomData: " + customDataStr);
+			const customDataStr = JSON.stringify(request.media.customData);
 			const customData = JSON.parse(request.media.customData);
 			
 			//const customData = request.media.customData;		
