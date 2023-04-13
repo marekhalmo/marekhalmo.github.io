@@ -157,7 +157,9 @@
 	}
 	
 	const playerManager = context.getPlayerManager();
-
+	
+	showDebug();
+	
     // Handle incoming messages
     playerManager.setMessageInterceptor(
       cast.framework.messages.MessageType.LOAD,
