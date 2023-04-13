@@ -111,7 +111,7 @@
 		//document.querySelector('.debug').textContent = "Received: " + JSON.stringify(request);
 		
         if (request.media && request.media.customData) {
-			document.querySelector('.debug').textContent = "Received: " + JSON.stringify(request.media);
+			document.querySelector('.debug').textContent = "CustomData: " + JSON.stringify(request.media.customData);
 		
 			if(request.media.customData.verse) {
 				document.querySelector('.verse').textContent = request.customData.verse;
