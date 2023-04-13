@@ -56,7 +56,7 @@ body {
   top:50%;
   transform:translate(-50%, -50%);
   color: white;
-  width: 90%;
+  width: 95%;
   
   #font-style: additive;
 }
@@ -90,6 +90,18 @@ p {
 
 .verse {
 	text-align: justify;
+}
+
+.large {
+	font-size: 1em;
+}
+
+.medium {
+	font-size: 0.7em;
+}
+
+.small {
+	font-size: 0.5em;
 }
 
 .source {
