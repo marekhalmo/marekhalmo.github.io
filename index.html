@@ -108,14 +108,15 @@
     playerManager.setMessageInterceptor(
       cast.framework.messages.MessageType.LOAD,
       request => {
-		//document.querySelector('.debug').textContent = "Received: " + JSON.stringify(request);
+		document.querySelector('.debug').innerHTML = document.querySelector('.debug').innerHTML + "<br>"
+		+ "Received: " + JSON.stringify(request);
 		
         if (request.media && request.media.customData) {
-			document.querySelector('.debug').textContent = document.querySelector('.debug').textContent + "<br>"
+			document.querySelector('.debug').innerHTML = document.querySelector('.debug').innerHTML + "<br>"
 			+ "CustomData: " + JSON.stringify(request.media.customData);
 			
 			const customData = JSON.parse(reqest.media.customData);		
-			document.querySelector('.debug').textContent = document.querySelector('.debug').textContent + "<br>"
+			document.querySelector('.debug').innerHTML = document.querySelector('.debug').innerHTML + "<br>"
 			+ "...PARSED...";
 			
 			if(customData.verse) {
@@ -126,7 +127,7 @@
 				document.querySelector('.source').textContent = customData.source;
 			}
 			
-			document.querySelector('.debug').textContent = document.querySelector('.debug').textContent + "<br>"
+			document.querySelector('.debug').innerHTML = document.querySelector('.debug').innerHTML + "<br>"
 			+ "...DONE";
 			
 			document.querySelector('.welcome').classList.add('hidden');
