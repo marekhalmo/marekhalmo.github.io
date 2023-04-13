@@ -37,7 +37,7 @@
 	<!-- The video player -->
 	<!--video id="video">controls autoplay</video-->
 	<!--cast-media-player style="display: none"></cast-media-player-->
-	<cast-media-player class="hidden"></cast-media-player>
+	<cast-media-player></cast-media-player>
  
 	<!-- Black screen to be displayed if nothing should be shown -->
 	<div id="black" class="dimable enabled">
@@ -74,9 +74,10 @@
   
   <!-- Initialize the CastReceiverContext -->
   <script type="text/javascript">
-    // Create a CastReceiverContext
-    const context = cast.framework.CastReceiverContext.getInstance();
+  
+	showDebug();
 	
+    // Create a CastReceiverContext
 	// https://marekhalmo.github.io/index.html
 	// http://www.maniacs.sk/cast/index.html
 	// Enable debug mode
@@ -156,9 +157,10 @@
 		document.getElementById('verses').classList.add(size);
 	}
 	
+	const context = cast.framework.CastReceiverContext.getInstance();	
 	const playerManager = context.getPlayerManager();
 	
-	showDebug();
+	
 	
     // Handle incoming messages
     playerManager.setMessageInterceptor(
