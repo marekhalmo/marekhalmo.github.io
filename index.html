@@ -112,16 +112,17 @@
 		
         if (request.media && request.media.customData) {
 			document.querySelector('.debug').textContent = "CustomData: " + JSON.stringify(request.media.customData);
-		
-			if(request.media.customData.verse) {
-				document.querySelector('.verse').textContent = request.customData.verse;
+			
+			const customData = JSON.parse(reqest.media.customData);		
+			if(customData.verse) {
+				document.querySelector('.verse').textContent = customData.verse;
 			}
 				
-			if(request.media.customData.source) {
-				document.querySelector('.source').textContent = request.customData.source;
+			if(customData.source) {
+				document.querySelector('.source').textContent = customData.source;
 			}
 			
-			document.querySelector('.debug').textContent = request.customData;
+			//document.querySelector('.debug').textContent = request.customData;
 			
 			document.querySelector('.welcome').classList.add('hidden');
 			document.querySelector('.verses').classList.remove('hidden');
