@@ -14,7 +14,7 @@
 
   <style>
     /* CSS styles for the text message */
-    .welcomme {
+    /*.welcomme {
       position: absolute;
       top: 0;
       left: 0;
@@ -29,28 +29,36 @@
       background-color: rgba(0, 0, 0, 0);
       z-index: 999;
     }
+	*/
 	
   </style>
 </head>
 <body>
-  <!-- The video player -->
-  <!--video id="video">controls autoplay</video-->
-  <!--cast-media-player style="display: none"></cast-media-player-->
-  <cast-media-player></cast-media-player>
-  
-  <div class="welcomme">
-   	<div class="bg"></div>
-	<div class="bg bg2"></div>
-	<div class="bg bg3"></div>
-	<div class="centered welcome">
-		<h1 class="title">VerseCast</h1>
-		<p class="message">Loading...</p>
+	<!-- The video player -->
+	<!--video id="video">controls autoplay</video-->
+	<!--cast-media-player style="display: none"></cast-media-player-->
+	<cast-media-player class="hidden"></cast-media-player>
+ 
+	<!-- Black screen to be displayed if nothing should be shown -->
+	<div id="black" class="dimable enabled">
 	</div>
-	<div class="verses hidden">
-			<div class="centered verse">Demo verse (ščťžýáíé´äô)</div>
-			<div class="source">None 1:1‭-‬10 TSTB</div>
+	
+	<div id="splash" class="dimable">
+		<div class="bg"></div>
+		<div class="bg bg2"></div>
+		<div class="bg bg3"></div>
+		<div id="welcome" class="centered">
+			<h1 id="title">VerseCast</h1>
+			<p id="message">Loading...</p>
+		</div>
 	</div>
-	<div class="debug hidden">Debug</div>
+		
+	<div id="verses" class="dimable">
+		<div id="verse" class="centered">Demo verse (ščťžýáíé´äô)</div>
+		<div id="source">None 1:1‭-‬10 TSTB</div>		
+	</div>
+	
+	<div id="debug" class="hidden">Debug</div>
   </div>
   
   
@@ -100,10 +108,52 @@
 	   "credentials":"testCredentials"
 	}
 	*/
+	
+	function fadeToBlack() {
+		enable("black");
+	}
+	
+	function fadeToSplash() {
+		disable("black");
+		enable("splash");
+		disable("verses");
+	}
+	
+	function fadeToVerse() {		
+		disable("black");
+		disable("splash");
+		enable("verses");
+	}
+	
+	function disable(elementName) {
+		document.getElementById(elementName).classList.remove('enabled');
+	}
+	
+	function enable(elementName) {
+		document.getElementById(elementName).classList.add('enabled');
+	}
+	
+	function showDebug() {
+		document.getElementById('debug').classList.remove('hidden');
+	}
 
 	function debug(str) {
-		document.querySelector('.debug').innerHTML = document.querySelector('.debug').innerHTML + "<br><br>"
+		document.getElementById('debug').innerHTML = document.querySelector('.debug').innerHTML + "<br><br>"
 		+ str;
+	}
+	
+	/*
+	function displayVerseElement() {
+		document.getElementById('welcome').classList.add('hidden');
+		document.getElementById('verses').classList.remove('hidden');
+	}
+	*/
+	
+	function setSize(size) {
+		document.getElementById('verses').classList.remove('large');
+		document.getElementById('verses').classList.remove('medium');
+		document.getElementById('verses').classList.remove('small');
+		document.getElementById('verses').classList.add(size);
 	}
 	
 	const playerManager = context.getPlayerManager();
@@ -121,28 +171,25 @@
 			debug("...PARSED...");
 			
 			if(customData.debug) {
-				document.querySelector('.debug').classList.remove('hidden');
+				showDebug();
 			}
 			
 			if(customData.verse) {
-				document.querySelector('.verse').textContent = customData.verse;
+				document.getElementById('verse').textContent = customData.verse;
 			}
 				
 			if(customData.source) {
-				document.querySelector('.source').textContent = customData.source;
+				document.getElementById('source').textContent = customData.source;
 			}
 			
 			if(customData.size) {
-				document.querySelector('.verses').classList.remove('large');
-				document.querySelector('.verses').classList.remove('medium');
-				document.querySelector('.verses').classList.remove('small');
-				document.querySelector('.verses').classList.add(customData.size);
+				setSize(customData.size);
 			}
 			
 			debug("...DONE");
 			
-			document.querySelector('.welcome').classList.add('hidden');
-			document.querySelector('.verses').classList.remove('hidden');
+			fadeToVerse();
+			//displayVerseElement();
         }
       }
     );
@@ -158,12 +205,14 @@
     });
 	*/
 	
-	const messageEl = document.querySelector('.message');
-    messageEl.textContent = "Present verses with Chromecast!";
+	const messageEl = document.getElementById('message');
+    messageEl.textContent = "Bible verses on Chromecast!";
 	
 
     // Start the receiver
     context.start();
+	
+	fadeToSplash();
 /*
     // Get the video element
     const video = document.getElementById('video');
