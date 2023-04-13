@@ -101,6 +101,13 @@ p {
 	padding: 0 1em 1em 0;
 }
 
+.debug {
+	text-align: left;
+	width: 100%;
+	height: 100%;
+	padding: 1em;
+}
+
 @keyframes slide {
   0% {
     transform:translateX(-25%);
