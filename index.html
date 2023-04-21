@@ -102,6 +102,7 @@
       cast.framework.messages.MessageType.LOAD,
       request => {		
         if (request.media && request.media.customData) {			
+		
 			const customDataStr = JSON.stringify(request.media.customData);
 			debug("CustomData: " + customDataStr);
 			
@@ -124,7 +125,15 @@
 			
 			debug("...DONE");
 
-			fadeToVerse();
+
+
+			if(customData.target || customData.target == 'splash') {
+				fadeToSplash();
+			} else if customData.target == 'verse') {
+				fadeToVerse();
+			} else if customData.target == 'black') {
+				fadeToBlack();
+			} 
 			//document.getElementById('welcome').classList.add('hidden');
 			//document.querySelector('verses').classList.remove('hidden');
         }
