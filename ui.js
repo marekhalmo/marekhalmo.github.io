@@ -1,11 +1,13 @@
 function fadeToBlack() {
     enable("black");
+	disable("verses");
+	disable("splash");
 }
 
 function fadeToSplash() {
-    disable("black");
-    enable("splash");
+    disable("black");    
     disable("verses");
+	enable("splash");
 }
 
 function fadeToVerse() {
