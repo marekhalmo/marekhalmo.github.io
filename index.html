@@ -125,13 +125,11 @@
 			
 			debug("...DONE");
 
-
-
 			if(customData.target || customData.target === 'splash') {
 				fadeToSplash();
-			} else if customData.target === 'verse') {
+			} else if(customData.target === 'verse') {
 				fadeToVerse();
-			} else if customData.target === 'black') {
+			} else if(customData.target === 'black') {
 				fadeToBlack();
 			} 
 			//document.getElementById('welcome').classList.add('hidden');
