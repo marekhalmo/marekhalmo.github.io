@@ -69,7 +69,7 @@
   
   <!-- Initialize the CastReceiverContext -->
   <script type="text/javascript">
-	//showDebug();
+	showDebug();
 	debug("Starting...");
     // Create a CastReceiverContext
     const context = cast.framework.CastReceiverContext.getInstance();
@@ -127,11 +127,11 @@
 
 
 
-			if(customData.target || customData.target == 'splash') {
+			if(customData.target || customData.target === 'splash') {
 				fadeToSplash();
-			} else if customData.target == 'verse') {
+			} else if customData.target === 'verse') {
 				fadeToVerse();
-			} else if customData.target == 'black') {
+			} else if customData.target === 'black') {
 				fadeToBlack();
 			} 
 			//document.getElementById('welcome').classList.add('hidden');
