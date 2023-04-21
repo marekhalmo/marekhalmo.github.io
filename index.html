@@ -125,7 +125,9 @@
 			
 			
 
-			if(customData.target || customData.target == 'splash') {
+			debug("Target: " + customData.target);
+
+			if(!customData.target || customData.target == 'splash') {
 				fadeToSplash();
 			} else if(customData.target == 'verse') {
 				fadeToVerse();
