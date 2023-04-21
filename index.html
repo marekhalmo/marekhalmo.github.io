@@ -50,7 +50,7 @@
     </div>
 
     <div id="verses" class="dimable">
-        <div id="verse" class="centered">Demo verse (ščťžýáíé´äô)</div>
+        <div id="verse" class="centered">„A ktoré?“ opýtal sa ho. Ježiš mu povedal: „Tieto: Nezabiješ! Nescudzoložíš! Nepokradneš! (ščťžýáíé´äô)</div>
         <div id="source">None 1:1‭-‬10 TSTB</div>
     </div>
 
@@ -73,6 +73,7 @@
 	debug("Starting...");
     // Create a CastReceiverContext
     const context = cast.framework.CastReceiverContext.getInstance();
+    context.setInactivityTimeout(30000);
 	
 	// https://marekhalmo.github.io/index.html
 	// http://www.maniacs.sk/cast/index.html

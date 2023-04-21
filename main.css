@@ -127,6 +127,7 @@ p {
 
 #verse {
 	text-align: justify;
+	text-justify: inter-character;
 }
 
 .large {
