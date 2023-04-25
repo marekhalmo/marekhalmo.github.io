@@ -66,6 +66,7 @@
   <!-- Include the Cast Receiver SDK -->
   <script type="text/javascript" src="//www.gstatic.com/cast/sdk/libs/caf_receiver/v3/cast_receiver_framework.js"></script>
   <script type="text/javascript" src="ui.js"></script>
+  <script type="text/javascript" src="theme.js"></script>
   
   <!-- Initialize the CastReceiverContext -->
   <script type="text/javascript">
@@ -135,6 +136,9 @@
 				fadeToBlack();
 			} 
 			
+			if(customData.size) {
+				setSize(customData.size);
+			}			
 			debug("...DONE");
 			//document.getElementById('welcome').classList.add('hidden');
 			//document.querySelector('verses').classList.remove('hidden');
