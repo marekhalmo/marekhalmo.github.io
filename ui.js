@@ -41,8 +41,8 @@ function displayVerseElement() {
 */
 
 function setSize(size) {
-    document.getElementById('verses').classList.remove('large');
-    document.getElementById('verses').classList.remove('medium');
-    document.getElementById('verses').classList.remove('small');
-    document.getElementById('verses').classList.add(size);
+    document.getElementById('verse').classList.remove('large');
+    document.getElementById('verse').classList.remove('medium');
+    document.getElementById('verse').classList.remove('small');
+    document.getElementById('verse').classList.add(size);
 }
