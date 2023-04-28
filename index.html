@@ -115,7 +115,9 @@
 				document.getElementById('debug').classList.remove('hidden');
 			}
 			
-			if(customData.verse) {
+			if(customData.verseHtml) {
+				document.getElementById('verse').innerHTML = customData.verseHtml;
+			} else if (customData.verse) {
 				document.getElementById('verse').textContent = customData.verse;
 			}
 				
