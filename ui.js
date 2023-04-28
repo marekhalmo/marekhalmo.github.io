@@ -33,6 +33,10 @@ function debug(str) {
     + str;
 }
 
+function setVerseStyle(str) {
+	document.getElementById('verseStyle').innerHTML = str;
+}
+
 /*
 function displayVerseElement() {
     document.getElementById('welcome').classList.add('hidden');

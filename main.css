@@ -137,7 +137,7 @@ p {
 	 
 #verse .label {
 		color: gray;
-		padding-right: 1em;
+		padding-right: 0.5em;
 }
 	
 #verse .note {
@@ -147,6 +147,10 @@ p {
 #verse h1 {
 	  color: maroon;
 	  margin-left: 40px;
+}
+
+#verse .chapter > .label {
+	display: none;
 }
 
 #verse .q1 .label, #verse .q1 .label, #verse .q1 .label {
@@ -159,7 +163,15 @@ p {
 
 #verse .q1, #verse .q2, #verse .s1 {	
 	display: inline;
-	margin-right: 0.5em;
+	#margin-right: 0.5em;
+}
+
+#verse .verse, #verse .heading {
+	display: none;
+}
+
+#verseasd .verse .content {
+	display: none;
 }
 
 .large {
