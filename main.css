@@ -131,6 +131,37 @@ p {
 	line-height: 1.4em;
 }
 
+#verse .heading {
+	  font-weight: bold;
+}
+	 
+#verse .label {
+		color: gray;
+		padding-right: 1em;
+}
+	
+#verse .note {
+		display: none;
+}
+	
+#verse h1 {
+	  color: maroon;
+	  margin-left: 40px;
+}
+
+#verse .q1 .label, #verse .q1 .label, #verse .q1 .label {
+	margin-left: 15px;
+}
+
+#verse .q1 not(.label), #verse .q1 not(.label), #verse .q1 not(.label) {
+	margin-left: 40px;
+}
+
+#verse .q1, #verse .q2, #verse .s1 {	
+	display: inline;
+	margin-right: 0.5em;
+}
+
 .large {
 	font-size: 100%;
 }
