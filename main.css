@@ -139,6 +139,7 @@ p {
 		color: gray;
 		padding-right: 0.5em;
 		font-size: 0.75em;
+		position: relative;
 		top: -0.5em;
 }
 	
