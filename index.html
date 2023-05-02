@@ -128,9 +128,9 @@
 				document.getElementById('debug').classList.remove('hidden');
 			}
 			
-			if(customData.verseHtml) {
-				document.getElementById('verse').innerHTML = customData.verseHtml;
-			} else if (customData.verse) {
+			if(customData.verseStyle) {
+				document.getElementById('verse').innerHTML = customData.verse;
+			} else {
 				document.getElementById('verse').textContent = customData.verse;
 			}
 				
