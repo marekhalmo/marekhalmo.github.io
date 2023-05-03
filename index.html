@@ -124,16 +124,27 @@
 
 			debug("...PARSED...");
 			
+			
 			if(customData.debug) {
 				document.getElementById('debug').classList.remove('hidden');
 			}
+			
+			if(!customData.target || customData.target == 'splash') {
+				fadeToSplash();
+				return;
+			} else if(customData.target == 'black') {
+				fadeToBlack();
+				return;
+			} else if(customData.target == 'verse') {
+				fadeToVerse();
+			} 			
 			
 			if(customData.verseStyle) {
 				document.getElementById('verse').innerHTML = customData.verse;
 			} else {
 				document.getElementById('verse').textContent = customData.verse;
 			}
-				
+							
 			if(customData.source) {
 				document.getElementById('source').textContent = customData.source;
 			}
@@ -147,14 +158,6 @@
 			}
 
 			debug("Target: " + customData.target);
-
-			if(!customData.target || customData.target == 'splash') {
-				fadeToSplash();
-			} else if(customData.target == 'verse') {
-				fadeToVerse();
-			} else if(customData.target == 'black') {
-				fadeToBlack();
-			} 
 			
 			if(customData.size) {
 				setSize(customData.size);
