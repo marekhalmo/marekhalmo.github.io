@@ -202,16 +202,12 @@ p {
 
 #source {
 	text-align: right;
-	//bottom: 0;
-    //right: 0;
 }
 
-#demo {
+#demo {	
+	text-align: left;
 	color: gray;
 	font-size: 0.7em
-	text-align: left;
-	//bottom: 0;
-    //left: 0;
 }
 
 #debug {
