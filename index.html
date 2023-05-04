@@ -61,6 +61,7 @@
                                                                                                         </div>
                                                                                                     </div></div></div-->
         <div id="source"></div>
+		<div id="demo" class="hidden">VerseCast - bible verses on chromecast</div>
     </div>
 
     <div id="debug" class="hidden">Debug</div>
@@ -155,6 +156,10 @@
 			
 			if(customData.verseStyle) {
 				setVerseStyle(customData.verseStyle);
+			}
+			
+			if(!customData.demo || customData.demo === "true") {
+				document.getElementById('demo').classList.remove('hidden');
 			}
 
 			debug("Target: " + customData.target);
