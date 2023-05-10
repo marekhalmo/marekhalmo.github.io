@@ -139,14 +139,14 @@
 			} else if(customData.target == 'black') {
 				fadeToBlack();
 				return;
-			} else if(customData.target == 'verse') {
+			} else if(customData.target == 'verse' || customData.target == "announcements") {
 				fadeToVerse();
 			} 			
 			
-			if(customData.verseStyle) {
-				document.getElementById('verse').innerHTML = customData.verse;
+			if(customData.style) {
+				document.getElementById('verse').innerHTML = customData.message;
 			} else {
-				document.getElementById('verse').textContent = customData.verse;
+				document.getElementById('verse').textContent = customData.message;
 			}
 							
 			if(customData.source) {
@@ -157,8 +157,8 @@
 				document.getElementById('source').textContent = customData.source;
 			}
 			
-			if(customData.verseStyle) {
-				setVerseStyle(customData.verseStyle);
+			if(customData.style) {
+				setVerseStyle(customData.style);
 			}
 			
 			if(!customData.demo || customData.demo === "true") {
