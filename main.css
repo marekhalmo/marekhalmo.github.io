@@ -140,11 +140,17 @@ p {
 }
 	 
 #verse .label {
-		color: silver;
+		//color: silver;
 		padding-right: 0.5em;
 		font-size: 0.75em;
 		position: relative;
 		top: -0.4em;
+		
+		
+		//font: 800 40px Arial;
+		-webkit-text-fill-color: transparent;
+		-webkit-text-stroke: 1px;
+
 }
 	
 #verse .note {
@@ -211,7 +217,7 @@ p {
 
 #demo {	
 	text-align: left;
-	color: silver;
+	color: #A0A0A0;
 	font-size: 0.7em
 }
 
