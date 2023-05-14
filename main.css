@@ -140,7 +140,7 @@ p {
 }
 	 
 #verse .label {
-		color: gray;
+		color: silver;
 		padding-right: 0.5em;
 		font-size: 0.75em;
 		position: relative;
@@ -211,7 +211,7 @@ p {
 
 #demo {	
 	text-align: left;
-	color: gray;
+	color: silver;
 	font-size: 0.7em
 }
 
