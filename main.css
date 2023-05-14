@@ -140,6 +140,7 @@ p {
 }
 	 
 #verse .label {
+		color: #A0A0A0;
 		//color: silver;
 		padding-right: 0.5em;
 		font-size: 0.75em;
@@ -148,8 +149,8 @@ p {
 		
 		
 		//font: 800 40px Arial;
-		-webkit-text-fill-color: transparent;
-		-webkit-text-stroke: 1px;
+		//-webkit-text-fill-color: transparent;
+		//-webkit-text-stroke: 1px;
 
 }
 	
