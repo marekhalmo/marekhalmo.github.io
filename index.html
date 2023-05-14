@@ -180,11 +180,11 @@
       }
     );
 	
-	context..addEventListener(
+	context.addEventListener(
 	  cast.framework.system.EventType.READY, function(event) {
 		// Set up the media element to display a blank screen
-		const mediaElement = document.createElement('div');
-		mediaElement.style.backgroundColor = 'transparent';
+		const mediaElement = document.getElementById('black');
+		//mediaElement.style.backgroundColor = 'transparent';
 		
 		// Set up the media manager to play the blank screen indefinitely
 		const mediaManager = new cast.framework.media.MediaManager(mediaElement);
@@ -196,7 +196,7 @@
 		  });
 		
 		// Start the receiver
-		cast.framework.CastReceiverContext.getInstance().start();
+		//cast.framework.CastReceiverContext.getInstance().start();
   });
 	
 	//debug("3");
