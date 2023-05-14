@@ -137,6 +137,8 @@
 			if(!customData.target || customData.target == 'splash') {
 				fadeToSplash();
 				return;
+			} else if(customData.target == 'keepalive') {
+				return;
 			} else if(customData.target == 'black') {
 				fadeToBlack();
 				return;
