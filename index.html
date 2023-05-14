@@ -162,7 +162,7 @@
 				setVerseStyle(customData.style);
 			}
 			
-			if(!customData.demo || customData.demo === "true") {
+			if(customData.demo && customData.demo === "false") {
 				document.getElementById('demo').classList.remove('hidden');
 			}
 
