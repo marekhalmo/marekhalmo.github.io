@@ -179,6 +179,26 @@
         }
       }
     );
+	
+	context..addEventListener(
+	  cast.framework.system.EventType.READY, function(event) {
+		// Set up the media element to display a blank screen
+		const mediaElement = document.createElement('div');
+		mediaElement.style.backgroundColor = '#000000';
+		
+		// Set up the media manager to play the blank screen indefinitely
+		const mediaManager = new cast.framework.media.MediaManager(mediaElement);
+		mediaManager.addEventListener(
+		  cast.framework.events.EventType.MEDIA_STATUS_UPDATED, function(event) {
+			if (event && event.media && event.media.duration) {
+			  event.media.duration = Infinity;
+			}
+		  });
+		
+		// Start the receiver
+		cast.framework.CastReceiverContext.getInstance().start();
+  });
+	
 	//debug("3");
 	/*
 	context.addCustomMessageListener('urn:x-cast:sk.maniacs.versecast', function(event) {
