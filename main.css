@@ -10,17 +10,28 @@
 @import url(https://fonts.googleapis.com/css?family=Pacifico);
 **/
 
+
 @import url(https://fonts.googleapis.com/css?family=Anton);
 @import url(https://fonts.googleapis.com/css?family=Great+Vibes);
 
+@import url(https://fonts.googleapis.com/css?family=Roboto:ital,wght@0,900;1,400);
+
 html {
   height:100%;
+}
+
+#keepAlive {
+	display: none;
 }
 
 body {
   margin:0;
   color: #ffffff;
   background-color: black;
+  font-family: 'Roboto';
+  letter-spacing: 0.05em;
+  
+  font-size: 1.1vi; /* 3vh; 1vi; 1.2vi force font sizes relative to viewport */
 }
 
 .dimable:not(.enabled) {
@@ -30,107 +41,197 @@ body {
 .dimable.enabled {
 	opacity: 1 !important;
 }
-
-#black {
-	background-color: rgb(0, 0, 0);
-	opacity: 1;
-	
-	transition: opacity 1s ease-in-out;
-	-moz-transition: opacity 1s ease-in-out;
-	-webkit-transition: opacity 1s ease-in-out;
-	
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	#font-size: 36px;
-	#font-weight: bold;
-	
-	z-index: 990;
+/*
+.wrapper {
+  max-width: 90%;
+  background: rgb(71,87,115, 0.8);
+  background: linear-gradient(70deg, rgba(71,87,115,0.8) 0%, rgba(58,72,97,0.85) 66%, rgba(47,66,97,0.9) 100%);
+  word-wrap: break-word;
+  position: relative;
+  padding: 1.5em;
 }
-
-#verses, #splash {
-	transition: opacity 1s ease-in-out;
-	-moz-transition: opacity 1s ease-in-out;
-	-webkit-transition: opacity 1s ease-in-out;
-}
-
-.bg {
-  #filter: blur(40px);
-  #-webkit-filter: blur(80px);
-  animation:slide 12s ease-in-out infinite alternate;
-  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
-  bottom:0;
-  left:-50%;
-  opacity:.5;
-  position:fixed;
-  right:-50%;
-  top:0;
-  z-index:-1;
-}
-
-.bg2 {
-  animation-direction:alternate-reverse;
-  animation-duration:14s;
-}
-
-.bg3 {
-  animation-duration:18s;
-}
-
+*/
 .centered {
+	left:50%;
+	top: 50%;
+	/* 
+	#padding:10vmin;
+	#position:fixed;
+	*/
+	position:fixed;
+	transform:translate(-50%, -50%);
+	max-width: 85%;
+	width: 97%;
+}
+
+.centertext, .ql-align-center {
+  /*
   #background-color:rgba(255,255,255,.8);
   #border-radius:.25em;
   #box-shadow:0 0 .25em rgba(0,0,0,.25);
-  box-sizing:border-box;
-  left:50%;
-  padding:10vmin;
-  position:fixed;
+  */
   text-align:center;
-  top:50%;
-  transform:translate(-50%, -50%);
-  width: 97%;
   
+  /*
   #font-style: additive;
+  */
 }
 
-h1 {
-  #font-family: 'Ballet', sans-serif;
+.screen {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  position: absolute;
+}
+/*
+.fit {
+	#box-sizing:border-box;
+	
+	position: relative;
+	left:50%;
+	#padding:10vmin;
+	#position:fixed;
+	top:50%;
+	transform:translate(-50%, -50%);
+	width: 97%;
+}
+*/
+
+#countdown:not(.zeroSize) {
+	max-height: 500px;
+	/* transition: max-height 0.50s ease-in; */
+	/* overflow: hidden; */
+}
+
+.zeroSize {
+	max-height: 0;
+    /* transition: max-height 0.50s ease-out; */
+    
+	/*
+	max-height: 0;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 2s ease-in, max-height 2s ease-in;
+	*/
+}
+
+
+.hiddenMy {
+	visibility: hidden;
+}
+
+#verses, #splash, #announcements, #black, #blackground, #songs, #timers {
+	transition: opacity 1s ease-in-out, background-color 1s ease-in-out, color 1s ease-in-out, box-shadow 1s ease-in-out;
+	-moz-transition: opacity 1s ease-in-out, background-color 1s ease-in-out, color 1s ease-in-out, box-shadow 1s ease-in-out;
+	-webkit-transition: opacity 1s ease-in-out, background-color 1s ease-in-out, color 1s ease-in-out, box-shadow 1s ease-in-out;
+	
+	opacity: 1;
+}
+
+#countdown {
+	/*
+	transition-property: transform, box-shadow, filter, color;
+	transition-duration: 0.5s, 0.2s, 0.2s, 0.25s;
+	transition-timing-function: ease-in-out, ease-out, ease-out, ease-in;
+	transition-delay: 0s, 0s, 0s, 0.2s
+	*/
+	overflow: hidden;
+	
+	transition: opacity 1s ease-out, opacity 1s ease-in, max-height 3s ease-out;
+	-moz-transition: opacity 1s ease-out, opacity 1s ease-in, max-height 3s ease-out;
+	-webkit-transition: opacity 1s ease-out, opacity 1s ease-in, max-height 3s ease-out;
+	
+	opacity: 1;
+}
+
+#verses, #splash, #announcements, #songs, #timers {
+	background-color: transparent;
+}
+/*
+#verse, #announcement {
+	width: 85%
+}
+*/
+
+#splash h1 {
+  /* #font-family: 'Ballet', sans-serif; */
   font-family: 'Anton', sans-serif;
-  #font-family: 'Pacifico', serif;
-  #font-family:monospace;
+  /* #font-family: 'Pacifico', serif;
+  #font-family:monospace; */
   font-size: 10em;
   margin: 0px;
   font-weight: normal;
 }
 
-p {
-  #font-family: 'Over the Rainbow', serif;
+#splash p {
+  /* #font-family: 'Over the Rainbow', serif; */
   font-family: 'Great Vibes', serif;
-  #font-family: 'Dancing script', serif;
+  /* #font-family: 'Dancing script', serif; */
   font-size: 3em;
   margin: 0px;
   margin-top: -1em;
+}
+
+#verses, #announcements, #songs, #timers {
+	text-shadow: 0px 2px 8px black;
+}
+
+#announcements {
+  font-size: 3em;
+}
+
+#announcement h1, #announcement h2, #announcement p {
+  /* #font-size: 1.3em; */
+  margin-block-start: 0.13em;
+  margin-block-end: 0.13em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 
 #verse:first-letter {
    margin-left: 1em;
 }
 
-#verses {
-	font-size: 3em
+#verses, #songs, #timers {
+	font-size: 3em;
+}
+
+#timers {
+	font-size: 2em;
+	/* line-height: */
+}
+
+#timer h1 {
+	font-size: 3em;
+	margin: 0;
+}
+
+#countdown {
+	font-size: 4em;
+}
+
+#verse, #song {
+	text-justify: inter-character;
+	/*line-height: 1.4em;*/
 }
 
 #verse {
 	text-align: justify;
-	text-justify: inter-character;
-	line-height: 1.4em;
 }
 
+#verse, #song {
+  line-height: 1.3;
+}
+
+#announcement li {
+	line-height: 1.3em;
+}
+
+/* Remove new lines from biblical text */
 #verse div {
 	display: inline;
 }
@@ -138,23 +239,24 @@ p {
 #verse .heading {
 	  font-weight: bold;
 }
-	 
+ 
 #verse .label {
 		color: #A0A0A0;
-		//color: silver;
+		/* color: silver; */
 		padding-right: 0.5em;
 		font-size: 0.75em;
 		position: relative;
 		top: -0.4em;
 		
-		
+		/*
 		//font: 800 40px Arial;
 		//-webkit-text-fill-color: transparent;
 		//-webkit-text-stroke: 1px;
+		*/
 
 }
 	
-#verse .note {
+#verse .note  {
 		display: none;
 }
 	
@@ -164,6 +266,11 @@ p {
 }
 
 #verse .chapter > .label {
+	display: none;
+}
+
+/* BUG Psalm 23 - always displaying "Psalm of David" */
+#verse .chapter .d {
 	display: none;
 }
 
@@ -177,19 +284,92 @@ p {
 
 #verse .q1, #verse .q2, #verse .s1 {	
 	display: inline;
-	#margin-right: 0.5em;
+	/* margin-right: 0.5em;*/
 }
 
+/*#verse .verse, ?? what is this ??*/ 
 #verse .verse, #verse .heading {
 	display: none;
+}
+
+#verse .wj, #verse .nd {
+	font-weight: bold;
 }
 
 #verseasd .verse .content {
 	display: none;
 }
+/*
+.xhuge {
+	font-size: 5vi;
+}
+
+.huge {
+	font-size: 4vi;
+}
+
+.large {
+	font-size: 3vi;
+}
+
+.medium {
+	font-size: 2.8vi;
+}
+
+.small {
+	font-size: 2.5vi;
+}
+
+
+.verses .xhuge {
+	font-size: 5vi;
+}
+
+.verses .huge {
+	font-size: 4vi;
+}
+
+.verses .large {
+	font-size: 3vi;
+}
+
+.verses .medium {
+	font-size: 2.5vi;
+}
+
+.verses .small {
+	font-size: 2.0vi;
+}
+*/
+
+/* Remember to modify ui.js (setVerseSize e.t.c.) when adding new sizes! */
+
+.xxxhuge {
+	font-size: 160%;
+}
+
+.xxhuge {
+	font-size: 145%;
+}
+
+.xhuge {
+	font-size: 130%;
+}
+
+.huge {
+	font-size: 120%;
+}
+
+.lhuge {
+	font-size: 110%;
+}
 
 .large {
 	font-size: 100%;
+}
+
+.mlarge {
+	font-size: 92%;
 }
 
 .medium {
@@ -200,7 +380,7 @@ p {
 	font-size: 70%;
 }
 
-#footer {
+#footer, #song-footer, #timer-footer {
 	font-size: 0.7em;	
 	padding: 1em;
 	position: absolute;
@@ -212,9 +392,10 @@ p {
 	align-items: baseline;
 }
 
-#source {
+#source, #song-source {
 	text-align: right;
 }
+
 
 #demo {	
 	text-align: left;
@@ -226,19 +407,33 @@ p {
 	text-align: left;
 	width: 100%;
 	height: 100%;
-	padding: 1em;
+	/* #padding: 1em; */
 	z-index: 999;
 }
 
-@keyframes slide {
-  0% {
-    transform:translateX(-25%);
-  }
-  100% {
-    transform:translateX(25%);
-  }
+#black, #blackground {
+	background-color: rgb(0, 0, 0);
+	width: 100%;
+	height: 100%;
 }
 
-.hidden {
+#black {
+	z-index: 990;
+}
+
+#song-footer {
 	display: none;
+}
+
+#hours {
+	display: none;
+}
+
+#seconds:before {
+    content: ":";
+    /* margin-right: 6px; */
+}
+
+.chapter {
+	padding-left: 1.5em;
 }

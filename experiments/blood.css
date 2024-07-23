@@ -1,0 +1,35 @@
+@import url(https://fonts.googleapis.com/css?family=Rubik:400,700);
+
+@import url(https://fonts.googleapis.com/css?family=Rubik+Dirt:400,700);
+
+@import url(https://fonts.googleapis.com/css?family=Rubik+Wet+Paint:400,700);
+
+.top {
+  #color: rgba(0, 0, 0, 0.7);
+  color: rgba(90, 0, 0, 1);
+  #z-index: 10;
+}
+
+.bloody2 {
+  #font-family: 'Rubik Wet Paint' !important;
+  #sans-serif;
+  position: abslute;
+  color: red;
+  shadow: 1px red;
+  filter: blur(0.025em) opacity(0.6);  
+}
+
+.bloody {
+  font-size: 150px;
+  #font-family: 'Rubik Wet Paint';
+  font-family: 'Rubik Dirt';
+  font-style: normal;
+  font-weight: 400;
+  position: absolute;
+}
+
+.bloody::before,
+.bloody::after {
+    content:attr(title);
+    display:block;
+}

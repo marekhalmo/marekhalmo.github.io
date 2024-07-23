@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js Particle System with Distance Blur and Sparkling Effect</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+    // Setup scene, camera, and renderer
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // Create octagon texture using Canvas
+    const octagonTexture = new THREE.CanvasTexture(createOctagonCanvas());
+
+    function createOctagonCanvas() {
+        const size = 128;
+        const canvas = document.createElement('canvas');
+        canvas.width = size;
+        canvas.height = size;
+        const context = canvas.getContext('2d');
+
+        context.fillStyle = 'white';
+        context.beginPath();
+        const sides = 8;
+        const radius = size / 2;
+        const step = (Math.PI * 2) / sides;
+        const shift = (Math.PI / 180.0) * -18;
+        context.translate(radius, radius);
+
+        for (let i = 0; i < sides; i++) {
+            const curStep = i * step + shift;
+            context.lineTo(radius * Math.cos(curStep), radius * Math.sin(curStep));
+        }
+
+        context.closePath();
+        context.fill();
+        return canvas;
+    }
+
+    // Create particle geometry
+    const particleCount = 5000;
+    const particles = new THREE.BufferGeometry();
+    const positions = [];
+    const colors = [];
+    const sizes = [];
+
+    for (let i = 0; i < particleCount; i++) {
+        const x = (Math.random() - 0.5) * 1000;
+        const y = (Math.random() - 0.5) * 1000;
+        const z = (Math.random() - 0.5) * 1000;
+
+        positions.push(x, y, z);
+
+        // Blueish colors
+        const color = new THREE.Color(0x0000ff);
+        color.lerp(new THREE.Color(0x00ffff), Math.random() * 0.5); // Shades of blue
+        colors.push(color.r, color.g, color.b);
+
+        sizes.push(20);
+    }
+
+    particles.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+    particles.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+    particles.setAttribute('size', new THREE.Float32BufferAttribute(sizes, 1));
+
+    // Create particle material
+    const material = new THREE.ShaderMaterial({
+        uniforms: {
+            pointTexture: { value: octagonTexture },
+            time: { value: 0.0 }
+        },
+        vertexShader: `
+            attribute float size;
+            varying vec3 vColor;
+            varying float vAlpha;
+            void main() {
+                vColor = color;
+                vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+                gl_PointSize = size * (50.0 / abs(mvPosition.z)); // Adjusting for blur
+                gl_Position = projectionMatrix * mvPosition;
+            }
+        `,
+        fragmentShader: `
+            uniform sampler2D pointTexture;
+            uniform float time;
+            varying vec3 vColor;
+            void main() {
+                float alpha = 0.5 + 0.5 * sin(time + gl_FragCoord.x * 0.01 + gl_FragCoord.y * 0.01);
+                gl_FragColor = vec4(vColor, alpha);
+                gl_FragColor = gl_FragColor * texture2D(pointTexture, gl_PointCoord);
+            }
+        `,
+        blending: THREE.AdditiveBlending,
+        depthTest: false,
+        transparent: true,
+        vertexColors: true
+    });
+
+    // Create particle system
+    const particleSystem = new THREE.Points(particles, material);
+    scene.add(particleSystem);
+
+    camera.position.z = 200;
+
+    // Animation function
+    function animate() {
+        requestAnimationFrame(animate);
+
+        // Update particle positions
+        const positions = particles.attributes.position.array;
+        for (let i = 1; i < positions.length; i += 3) {
+            positions[i] -= 0.03; // Falling speed (3 px per second)
+            if (positions[i] < -500) {
+                positions[i] = 500; // Reset particle position to the top
+            }
+        }
+        particles.attributes.position.needsUpdate = true;
+
+        // Update time uniform for sparkling effect
+        material.uniforms.time.value += 0.05;
+
+        renderer.render(scene, camera);
+    }
+
+    animate();
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: #FFF;
+  overflow: hidden;
+}
+
+body {
+  position: relative;
+  background: #002033;
+  #background: #00222B;
+  filter: blur(15px);
+}
+
+canvas#canvas {
+  display: block;
+}
