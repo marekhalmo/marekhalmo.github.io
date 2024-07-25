@@ -6,6 +6,17 @@ function blackground(on) {
 	}
 }
 
+function fadeToPlayer() {
+	blackground(false);	
+	disable("songs");
+	disable("backgroundInsert");
+	disable("timers");
+	disable("verses");
+    disable("black");
+    disableSplash();
+	disable("announcements");  
+}
+
 function fadeToBlack() {
 	blackground(true);
     enable("black");
