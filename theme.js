@@ -31,8 +31,12 @@ function loadBackground(backgroundName, onBlack) {
 	
 	if(loadedBackground !== backgroundName) {
 		loadedBackground = backgroundName;
-		document.getElementById('background').src = base + 'backgrounds/' + backgroundName + '.html';
-		document.getElementById('templateStyle').href =  base + 'backgrounds/' + backgroundName + '.css';
+		if(backgroundName.startsWith('http')) {
+			document.getElementById('background').src = backgroundName;
+		} else {
+			document.getElementById('background').src = base + 'backgrounds/' + backgroundName + '.html';
+			document.getElementById('templateStyle').href =  base + 'backgrounds/' + backgroundName + '.css';
+		}
 	}
 }
 
