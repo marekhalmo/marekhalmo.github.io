@@ -7,6 +7,9 @@ document.getElementById('background').onload = function(){
 		disableBackground();
 	} else {
 		enableBackground();
+		if(document.querySelector("button[aria-label='Play']")) {
+			document.querySelector("button[aria-label='Play']").click();
+		}
 	}
 };
 
