@@ -1,5 +1,14 @@
 var loadedBackground = "black";
 var versesOnBlack = null;
+var onBlack;
+
+document.getElementById('background').onload = function(){
+	if(versesOnBlack) {
+		disableBackground();
+	} else {
+		enableBackground();
+	}
+};
 
 function disableBackground() {
 	backgroundDisabled = true;
@@ -21,16 +30,13 @@ function loadBackground(backgroundName, onBlack) {
 		var boolOnBlack = onBlack === "true";
 		if(versesOnBlack != boolOnBlack) {
 			versesOnBlack = boolOnBlack;
-			if(boolOnBlack) {
-				disableBackground();
-			} else {
-				enableBackground();
-			}
 		}
 	}
 	
 	if(loadedBackground !== backgroundName) {
 		loadedBackground = backgroundName;
+		disableBackground();
+		
 		if(backgroundName.startsWith('http')) {
 			document.getElementById('background').src = backgroundName;
 		} else {

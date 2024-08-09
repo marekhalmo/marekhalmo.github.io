@@ -38,7 +38,7 @@
 			</div>
 		</div>
 		<div id="announcements" class="screen dimable">
-			<div class="frame centered">
+			<div id="announcementFrame" class="frame centered dimable enabled">
 				<div id="announcement" class="inframe fit sizable">
 				</div>
 			</div>
@@ -195,6 +195,13 @@
 							setAnnouncementStyle(customData.style);
 						}
 						debug("c2");
+						
+						if(customData.message == null || customData.message.length == 0) {
+							document.getElementById('announcementFrame').classList.remove('enabled');
+						} else {
+							document.getElementById('announcementFrame').classList.add('enabled');
+						}
+						
 						if(customData.style) {
 							document.getElementById('announcement').innerHTML = customData.message;
 						} else {
