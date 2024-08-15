@@ -132,6 +132,10 @@ body {
 	opacity: 1;
 }
 
+#announcements img {
+  object-fit: contain;
+}
+
 #countdown {
 	/*
 	transition-property: transform, box-shadow, filter, color;

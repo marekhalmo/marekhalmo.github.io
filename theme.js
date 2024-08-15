@@ -2,13 +2,19 @@ var loadedBackground = "black";
 var versesOnBlack = null;
 var onBlack;
 
-document.getElementById('background').onload = function(){
+var backgroundElement = document.getElementById('background');
+
+backgroundElement.onload = function(event){
+	console.log("Background on load call! [" + event.target + "]");
 	if(versesOnBlack) {
 		disableBackground();
 	} else {
 		enableBackground();
-		if(document.querySelector("button[aria-label='Play']")) {
-			document.querySelector("button[aria-label='Play']").click();
+		document.querySelector("button[aria-label='Play']")
+		console.log(document.querySelector("button[aria-label='Play']"));
+		
+		if(event.target.querySelector("button[aria-label='Play']")) {
+			event.target.querySelector("button[aria-label='Play']").click();
 		}
 	}
 };
@@ -42,6 +48,7 @@ function loadBackground(backgroundName, onBlack) {
 		
 		if(backgroundName.startsWith('http')) {
 			document.getElementById('background').src = backgroundName;
+			// document.getElementById('templateStyle').href =  base +	"backgrounds/blank.css"; // Should we clear the theme?
 		} else {
 			document.getElementById('background').src = base + 'backgrounds/' + backgroundName + '.html';
 			document.getElementById('templateStyle').href =  base + 'backgrounds/' + backgroundName + '.css';
