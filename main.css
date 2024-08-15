@@ -133,7 +133,7 @@ body {
 }
 
 #announcements img {
-  object-fit: contain;
+  /* object-fit: contain; */
 }
 
 #countdown {
