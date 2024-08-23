@@ -44,7 +44,7 @@
 			</div>
 			<div id="announcement-footer">
 				<span class="demoText hiddenMy">VerseCast for Chromecast</span>
-				<span/>
+				<span id="announcement-footer"></span>
 			</div>
 		</div>
 		<div id="verses" class="screen dimable">
@@ -211,7 +211,11 @@
 
 						if(customData.size) {
 							setAnnouncementSize(customData.size);
-						}							
+						}	
+						
+						if(customData.source) {	
+							document.getElementById('announcement-footer').innerHTML = customData.source;
+						}
 					} else if(customData.target == "timer") {
 						fadeToTimer();
 						debug("d1");
