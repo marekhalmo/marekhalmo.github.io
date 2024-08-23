@@ -16,7 +16,7 @@
 
 
 
-#source, #verse, #announcement, #song, #timerMessage {
+#source, #announcement-footer, #song-footer, #timer-footer, #verse, #announcement, #song, #timerMessage {
 	font-family: 'Roboto' !important;
 	font-style: normal;
     font-weight: 300;
@@ -49,7 +49,7 @@
 }
 
 #announcement:has(> #giving) {
-	padding: 0em;
+	padding: 0.5em;
 }
 
 /*
