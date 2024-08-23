@@ -43,7 +43,7 @@
 	border: 0.03em solid white;
 }
 
-#verses:not(.blackground) #footer, #verses:not(.blackground) #announcement-footer, #verses:not(.blackground) #song-footer, #verses:not(.blackground) #timer-footer {
+#verses:not(.blackground) #footer, #announcements:not(.blackground) #announcement-footer, #song-footer, #timer-footer {
 	color: #444D;
     text-shadow: 0px 2px 2px #A888;
 }
