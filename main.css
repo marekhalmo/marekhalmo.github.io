@@ -135,7 +135,7 @@ body {
 #announcements img {
   /* object-fit: contain; */
 }
-#giving .top-section {
+#giving {
     display: flex;
     align-items: center;
     /* border-bottom: 1px solid #ccc; */
@@ -166,16 +166,6 @@ body {
 
 #giving .right-text sub {
 	margin-top: 1.5em;
-}
-
-#giving .bottom-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 1.5em; /* Added padding for spacing */
-    text-align: center;
-    /* border-top: 1px solid #ccc; */ /* Added border to separate sections */
-    height: calc(100vh - auto); /* Adjusted to prevent overlap */
 }
 
 #countdown {
@@ -445,7 +435,7 @@ body {
 	align-items: baseline;
 }
 
-#source, #song-source {
+#source, #song-source, #announcement-footer-right {
 	text-align: right;
 }
 
