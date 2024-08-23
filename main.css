@@ -143,7 +143,7 @@ body {
 }
 
 #giving .left-image {
-    width: 35%;
+    width: 40%;
 }
 
 #giving .left-image img {
@@ -157,7 +157,7 @@ body {
 }
 
 #giving .right-text {
-    width: 65%;
+    width: 60%;
     text-align: left;
 	padding-left: 2.5em;
 	display: flex;
