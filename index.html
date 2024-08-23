@@ -215,7 +215,10 @@
 						
 						if(customData.source) {	
 							document.getElementById('announcement-footer-right').innerHTML = customData.source;
+						} else {
+							document.getElementById('announcement-footer-right').innerHTML = "";
 						}
+						
 					} else if(customData.target == "timer") {
 						fadeToTimer();
 						debug("d1");
