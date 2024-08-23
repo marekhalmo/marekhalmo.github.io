@@ -135,6 +135,47 @@ body {
 #announcements img {
   /* object-fit: contain; */
 }
+#giving .top-section {
+    display: flex;
+    align-items: center;
+    /* border-bottom: 1px solid #ccc; */
+    padding: 0; /* Added padding for spacing */
+}
+
+#giving .left-image {
+    width: 40%;
+}
+
+#giving .left-image img {
+	background-color: white;
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 1.5em; /* Rounded corners */
+    border: 0.2em solid #000; /* Added border */
+}
+
+#giving .right-text {
+    width: 60%;
+    text-align: left;
+	padding-left: 2em;
+	display: flex;
+	flex-direction: column;
+}
+
+#giving .right-text sub {
+	margin-top: 1.5em;
+}
+
+#giving .bottom-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1.5em; /* Added padding for spacing */
+    text-align: center;
+    /* border-top: 1px solid #ccc; */ /* Added border to separate sections */
+    height: calc(100vh - auto); /* Adjusted to prevent overlap */
+}
 
 #countdown {
 	/*
