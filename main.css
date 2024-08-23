@@ -139,7 +139,6 @@ body {
     display: flex;
     align-items: center;
     /* border-bottom: 1px solid #ccc; */
-    padding: 1.5em 0; /* Added padding for spacing */
 }
 
 #giving .left-image {
