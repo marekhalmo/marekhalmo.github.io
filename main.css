@@ -163,6 +163,10 @@ body {
 	flex-direction: column;
 }
 
+#giving .right-text h1 {
+	font-size: 1.6em;
+}
+
 #giving .right-text sub {
 	margin-top: 1.5em;
 }
