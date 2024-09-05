@@ -40,8 +40,6 @@
 		<div id="announcements" class="screen dimable">
 			<div id="announcementFrame" class="frame centered dimable enabled">
 				<div id="announcement" class="inframe fit sizable">
-				</div>
-			</div>
 			<div id="announcement-footer">
 				<span class="demoText hiddenMy">VerseCast for Chromecast</span>
 				<span id="announcement-footer-right"></span>
@@ -188,7 +186,7 @@
 							setVerseSize(customData.size);
 						}	
 						
-					} else if(customData.target == "announcements" || customData.target == "summary") {
+					} else if(customData.target == "announcements" || customData.target == "giving" || customData.target == "summary") {
 						fadeToAnnouncement();
 						debug("c1");
 					    if(customData.style) { 
