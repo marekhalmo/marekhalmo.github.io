@@ -6,6 +6,19 @@ function blackground(on) {
 	}
 }
 
+function fadeToImage() {
+	blackground(false);	
+	enable("images");
+	disable("embed");
+	disable("songs");
+	disable("backgroundInsert");
+	disable("timers");
+	disable("verses");
+    disable("black");
+    disableSplash();
+	disable("announcements");  
+}
+
 function fadeToEmbed() {
 	blackground(false);	
 	enable("embed");
@@ -16,6 +29,7 @@ function fadeToEmbed() {
     disable("black");
     disableSplash();
 	disable("announcements");  
+	disable("images");
 }
 
 function fadeToPlayer() {
@@ -28,6 +42,7 @@ function fadeToPlayer() {
     disableSplash();
 	disable("announcements");  
 	disable("embed");
+	disable("images");
 }
 
 function fadeToBlack() {
@@ -40,6 +55,7 @@ function fadeToBlack() {
 	disableSplash();
 	disable("announcements");
 	disable("embed");
+	disable("images");
 }
 
 function fadeToBackground() {
@@ -52,6 +68,7 @@ function fadeToBackground() {
 	disableSplash();
 	disable("announcements");
 	disable("embed");
+	disable("images");
 }
 
 function fadeToSplash() {
@@ -69,6 +86,7 @@ function fadeToSplash() {
     disable("verses");
 	disable("announcements");	
 	disable("embed");
+	disable("images");
 	//disableSplash();
 }
 
@@ -87,6 +105,7 @@ function fadeToVerse() {
     disableSplash();
 	disable("announcements");
 	disable("embed");
+	disable("images");
 }
 
 function fadeToSong() {	
@@ -99,6 +118,7 @@ function fadeToSong() {
     disableSplash();
 	disable("announcements");    
 	disable("embed");
+	disable("images");
 }
 
 function fadeToAnnouncement() {	
@@ -111,6 +131,7 @@ function fadeToAnnouncement() {
     disableSplash();
 	disable("verses");	
 	disable("embed");
+	disable("images");
 }
 
 function fadeToTimer() {
@@ -123,6 +144,7 @@ function fadeToTimer() {
     disableSplash();
 	disable("verses");	
 	disable("embed");
+	disable("images");
 }
 
 var splashRemoved = false;
