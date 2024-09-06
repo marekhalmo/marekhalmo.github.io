@@ -83,6 +83,7 @@
 				<span class="clock"></span>
 			</div>
 		</div>
+		<embed id="embed" class="screen hiddenMy" type="text/html" src="" style="width:100%;height:100vh;"></embed>
 		<div id="black" class="screen dimable fit enabled"></div>
 		<div id="debug" class="screen hiddenMy fit">Debug</div>
 		<!-- Include the Cast Receiver SDK -->
@@ -236,6 +237,12 @@
 						}	
 					} else if( customData.target == "youtubevideo") {
 						fadeToPlayer();
+					} else if (customData.target == "embed") {
+						if(customData.message) {
+							document.getElementById('embed').src = customData.message;
+						}
+						
+						fadeToEmbed();
 					}
 					
 					setDemo(customData.demo && customData.demo === "true");
