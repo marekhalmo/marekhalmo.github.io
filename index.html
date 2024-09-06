@@ -84,7 +84,6 @@
 			</div>
 		</div>
 		<div id="images" class="screen dimable fit">
-			<img id="image" src="" alt="Slide">
 		</div>
 		<iframe id="embed" class="screen dimable fit" type="text/html" src=""></iframe>
 		<div id="black" class="screen dimable fit enabled"></div>
@@ -248,7 +247,7 @@
 						fadeToEmbed();
 					} else if (customData.target == "image") {
 						if(customData.message) {
-							document.getElementById('image').src = customData.message;
+							document.getElementById('images').innerHTML = customData.message;
 						}
 						
 						fadeToImage();
