@@ -246,6 +246,7 @@
 						fadeToEmbed();
 					} else if (customData.target == "image") {
 						if(customData.message) {
+							document.getElementById('images').innerHTML = "";
 							document.getElementById('images').innerHTML = customData.message;
 						}
 						
