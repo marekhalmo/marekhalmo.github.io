@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		</head>
+    <body onLoad="onLoad()" onClick="onClick()">
+		<button id="button" onclick="showAlert()">Click Me!</button>
+		<script>
+			function onLoad() {
+				var parent = document.getElementById("embed");
+				console.log("Embed found: " + parent);
+			}
+		
+			function onClick() {
+				console.log("On Click!");
+			}
+		
+			function showAlert() {
+				console.log("WORKS!");
+				alert('Button was clicked!');
+			}
+		</script>
+    </body>
+</html>

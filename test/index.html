@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<!--script src="jquery-3.7.1.min.js"></script-->
+		<script src="https://www.youtube.com/iframe_api"></script>
+		<style>
+			footer {
+				display: none;
+			}
+			
+			header {
+				display: none;
+			}
+		</style>
+    </head>
+    <body>
+	<!--div id="youtube-player"></div-->
+		<!--embed id="embed" src="embed.html" type="text/html" style="width: 100%; height:100%;"></embed-->
+		<header>SHOULD NOT BE VISIBLE!</header>
+		<embed src="https://www.canva.com/design/DAGNt2P2f68/9_5DdwGLW-tgO9PruIY-EQ/view?embed" type="text/html"></embed>
+		
+		<div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"    src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGNt2P2f68&#x2F;GiBURxLslYuo3lXUiKStUw&#x2F;view?embed" allowfullscreenaa="allowfullscreen" allowaa="fullscreen">  </iframe></div><a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGNt2P2f68&#x2F;GiBURxLslYuo3lXUiKStUw&#x2F;view?utm_content=DAGNt2P2f68&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">KC Banner</a> by Marek Halmo
+	<!--iframe src="https://www.canva.com/design/DAGNXm4jssU/GMLD0i9SuKKmbtvhSEuG0Q/edit?embeddedPage=home&amp;embeddedPageSource=home&amp;appNavState=overlay&amp;embeddedPageLoadStartTime=lztg760v&amp;embeddedPageLoadContext=sub_navigation" class="X2hS6g" title="Untitled design - Video"></iframe-->
+		
+		<!--video src="https://www.canva.com/design/DAF92tLcZus/3nOHYmrCoUwxnDL4v2nQ6Q/watch?embed" muted autoplay playsinline loop></video-->
+		<!--button onclick="showAlert()">Nope - Click Me!</button-->
+		<script>			
+			var e = document.getElementById("embed");
+			
+			e.addEventListener("load", (event) => { 
+				console.log("EVENT: " + event.target);
+				// Operate upon the SVG DOM here
+				e.querySelector('#button').click();
+			});
+			
+			
+			let player;
+
+			// This function is called once the YouTube Iframe API is ready
+			function onYouTubeIframeAPIReady() {
+				player = new YT.Player('youtube-player', {
+					width: 560,
+					height: 315,
+					videoId: 'oM0HOxae8_A', // The YouTube video ID
+					playerVars: {
+						autoplay: 1,
+					},
+					events: {
+						// You can add other event handlers here if needed
+					}
+				});
+			}
+
+			// Pause the video after 5 seconds
+			setTimeout(function() {
+				if (player && typeof player.pauseVideo === 'function') {
+					player.pauseVideo();
+				}
+			}, 5000);
+		
+		/*
+			function showAlert() {
+				console.log("Do magic!");
+			}
+		*/
+			/*
+			function onLoad(event) {
+				console.log("On load! [" + event.target + "]");
+			}
+			*/
+		</script>
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+          content="width=device-width, initial-scale=1.0">
+    <title>Embedded YouTube Video</title>
+    <script src="https://www.youtube.com/iframe_api"></script>
+</head>
+<body>
+    <h1>Working with Embedded Elements</h1>
+    <!-- This div will be replaced with the 
+      YouTube iframe once the API is loaded -->
+    <div id="youtube-player"></div>
+    
+    <script>
+        let player;
+
+        // This function is called once the YouTube Iframe API is ready
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('youtube-player', {
+                width: 560,
+                height: 315,
+                videoId: 'oM0HOxae8_A', // The YouTube video ID
+                playerVars: {
+                    autoplay: 1,
+                },
+                events: {
+                    // You can add other event handlers here if needed
+                }
+            });
+        }
+
+        // Pause the video after 5 seconds
+        setTimeout(function() {
+            if (player && typeof player.pauseVideo === 'function') {
+                player.pauseVideo();
+            }
+        }, 5000);
+    </script>
+</body>
+  
+</html>
