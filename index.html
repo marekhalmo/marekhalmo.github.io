@@ -83,7 +83,7 @@
 				<span class="clock"></span>
 			</div>
 		</div>
-		<div id="images" class="screen dimable fit"><img id="image" src=""></div>
+		<div id="images" class="screen dimable fit"><img id="image" src="about:blank" onload="onImageLoaded()"></div>
 		<iframe id="embed" class="screen dimable fit" type="text/html" src="about:blank"></iframe>
 		<div id="black" class="screen dimable fit enabled"></div>
 		<div id="debug" class="screen hiddenMy fit">Debug</div>
@@ -245,11 +245,11 @@
 						
 						fadeToEmbed();
 					} else if (customData.target == "image") {
+						fadeToImage();
+						
 						if(customData.message) {
 							document.getElementById('image').src = customData.message;
 						}
-						
-						fadeToImage();
 					}
 					
 					setDemo(customData.demo && customData.demo === "true");
