@@ -1,8 +1,3 @@
-function onImageLoaded() {
-    console.log("Image onLoad!")
-    enable("images");
-}
-
 function blackground(on) {
 	if(on == true) {
 		enable("blackground");
@@ -14,8 +9,7 @@ function blackground(on) {
 function fadeToImage() {
 	blackground(false);	
 	disable("background");
-	//enable("images");
-	disable("images");
+	enable("images");
 	disable("embed");
 	disable("songs");
 	disable("backgroundInsert");

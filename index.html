@@ -245,11 +245,12 @@
 						
 						fadeToEmbed();
 					} else if (customData.target == "image") {
-						fadeToImage();
-						
+						disable("images");
 						if(customData.message) {
 							document.getElementById('image').src = customData.message;
 						}
+						
+						// fadeToImage();
 					}
 					
 					setDemo(customData.demo && customData.demo === "true");
