@@ -188,7 +188,10 @@
 						}	
 						
 					} else if(customData.target == "announcements" || customData.target == "giving" || customData.target == "summary") {
-						fadeToAnnouncement();
+						if(customDatq.target != "giving") {
+							fadeToAnnouncement();
+						}
+						
 						debug("c1");
 					    if(customData.style) { 
 							setAnnouncementStyle(customData.style);
