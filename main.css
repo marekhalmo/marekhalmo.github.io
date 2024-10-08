@@ -505,8 +505,8 @@ img[src="about:blank"] {
 	position: absolute;
     top: 50%;
     left: 50%;
-	width: 100vw + 1px;
-	height: 100vh + 1px;
+	width: calc(100vw + 1px);
+	height: calc(100vh + 1px);
     object-fit: cover;
     transform: translate(-50%, -50%);
 }
