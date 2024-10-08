@@ -11,7 +11,7 @@ function fadeToGiving() {
 }
 
 function fadeToImage() {
-	console.log("Fade to Image!");
+	//console.log("Fade to Image!");
 	blackground(false);	
 	disable("background");
 	enable("images");
