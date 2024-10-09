@@ -161,7 +161,7 @@ img[src="about:blank"] {
 #giving .left-image img {
 	box-sizing: border-box;
 	background-color: white;
-    width: 100vw;
+    width: 100%;
     height: auto;
     display: block;
     border-radius: 1.5em; /* Rounded corners */
