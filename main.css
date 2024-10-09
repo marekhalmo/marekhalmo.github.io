@@ -36,7 +36,6 @@ body {
   font-size: 1.1vi; /* 3vh; 1vi; 1.2vi force font sizes relative to viewport */
 }
 
-
 img[src="about:blank"] {
     visibility:hidden
 }
