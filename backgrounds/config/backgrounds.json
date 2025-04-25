@@ -13,12 +13,12 @@
         "changesFont": true,
 		"licences": ["theme_christmas_snow"]
     }, {
-        "alias": "sparkles",
-        "image": "sparkles.png",
-        "name": "Sparkles",
+        "alias": "dark-stripes",
+        "image": "dark-stripes.png",
+        "name": "Dark stripes",
         "animated": true,
-        "changesFont": false,
-        "licences": ["theme_sparkles"]
+        "changesFont": true,
+        "licences": ["theme_dark_stripes"]
     }, {
         "alias": "snow",
         "image": "snow.png",
@@ -26,13 +26,6 @@
         "animated": true,
         "changesFont": true,
         "licences": ["theme_snow"]
-    }, {
-        "alias": "dark-stripes",
-        "image": "dark-stripes.png",
-        "name": "Dark stripes",
-        "animated": true,
-        "changesFont": true,
-        "licences": ["theme_dark_stripes"]
     }, {
         "alias": "animated-blobs",
         "image": "animated-blobs.png",
@@ -68,6 +61,13 @@
         "animated": true,
         "licences": ["theme_gray_pattern"],
         "changesFont": true
+    }, {
+        "alias": "sparkles",
+        "image": "sparkles.png",
+        "name": "Sparkles",
+        "animated": true,
+        "changesFont": false,
+        "licences": ["theme_sparkles"]
     }, {
         "alias": "blueshapes",
         "image": "blueshapes.png",
