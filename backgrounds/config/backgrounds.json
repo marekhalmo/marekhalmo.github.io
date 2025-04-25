@@ -27,6 +27,13 @@
         "changesFont": true,
         "licences": ["theme_snow"]
     }, {
+        "alias": "dark-stripes",
+        "image": "dark-stripes.png",
+        "name": "Dark stripes",
+        "animated": true,
+        "changesFont": true,
+        "licences": ["theme_dark_stripes"],
+    }, {
         "alias": "animated-blobs",
         "image": "animated-blobs.png",
         "name": "Animated Blobs",
@@ -109,14 +116,6 @@
         "name": "Gloria",
         "animated": true,
         "changesFont": true,
-        "unreleased": true
-    }, {
-        "alias": "dark-stripes",
-        "image": "test.png",
-        "name": "Sark stripes",
-        "animated": true,
-        "changesFont": true,
-        "licences": ["theme_dark_stripes"],
         "unreleased": true
     }, {
         "alias": "test",
