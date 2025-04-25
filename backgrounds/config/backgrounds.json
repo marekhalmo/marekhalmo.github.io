@@ -111,6 +111,14 @@
         "changesFont": true,
         "unreleased": true
     }, {
+        "alias": "dark-stripes",
+        "image": "test.png",
+        "name": "Sark stripes",
+        "animated": true,
+        "changesFont": true,
+        "licences": ["theme_dark_stripes"],
+        "unreleased": true
+    }, {
         "alias": "test",
         "image": "test.png",
         "name": "Test",
