@@ -32,7 +32,7 @@
         "name": "Dark stripes",
         "animated": true,
         "changesFont": true,
-        "licences": ["theme_dark_stripes"],
+        "licences": ["theme_dark_stripes"]
     }, {
         "alias": "animated-blobs",
         "image": "animated-blobs.png",
