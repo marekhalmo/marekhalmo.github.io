@@ -17,7 +17,7 @@ window.onresize = function() {
 	md = 80;
 	maxHeight = h*.5
 	minHeight = h*.5;
-	maxSpeed = 35*magic;
+	maxSpeed = 20*magic;
 	minSpeed = -3*magic;
 	
   dots = [];
@@ -39,7 +39,7 @@ minWidth = 2*magic;
 md = 80;
 maxHeight = h*.5
 minHeight = h*.5;
-maxSpeed = 35*magic;
+maxSpeed = 20*magic;
 minSpeed = -3*magic;
 hue = 230;
 hueDif = 50; // Hue +/-
