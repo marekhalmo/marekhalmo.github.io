@@ -1,6 +1,6 @@
 /* Over the rainbow font */
 /**@import url(https://fonts.googleapis.com/css?family=Over+the+Rainbow);
-
+	
 
 @import url(https://fonts.googleapis.com/css?family=Ballet);
 
@@ -519,4 +519,12 @@ img[src="about:blank"] {
 	height: 100vh; /* calc(100vh + 1px); */
     object-fit: cover;
     transform: translate(-50%, -50%);
+}
+
+#images img {
+	transition: object-fit 0.3s ease;
+}
+
+#images  .force-contain {
+	object-fit: contain;
 }
