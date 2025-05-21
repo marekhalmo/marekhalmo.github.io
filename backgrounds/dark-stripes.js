@@ -3,18 +3,18 @@ var ctx = canvas.getContext("2d");
 var bgg = document.getElementById("bg_glow");
 w = ctx.canvas.width = window.innerWidth;
 h = ctx.canvas.height = window.innerHeight;
-var magic = w/1600;
+var magic = w/1700;
 console.log(w);
 console.log(magic);
 
 window.onresize = function() {
   w = ctx.canvas.width = window.innerWidth;
   h = ctx.canvas.height = window.innerHeight;
-	magic = w/1600;
+	magic = w/1700;
   
 	maxWidth = 15*magic;
 	minWidth = 2*magic;
-	md = 100;
+	md = 90;
 	maxHeight = h*.5
 	minHeight = h*.5;
 	maxSpeed = 35*magic;
@@ -36,7 +36,7 @@ dots=[{}];
 mx = 0; my = 0;
 maxWidth = 15*magic;
 minWidth = 2*magic;
-md = 100;
+md = 90;
 maxHeight = h*.5
 minHeight = h*.5;
 maxSpeed = 35*magic;
