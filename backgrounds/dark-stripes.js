@@ -43,7 +43,7 @@ maxSpeed = 35*magic;
 minSpeed = -3*magic;
 hue = 230;
 hueDif = 50; // Hue +/-
-glow = 5; // Set to 0 for better performance
+glow = 3; // Set to 0 for better performance
 ctx.globalCompositeOperation = "lighter";
 
 function pushDots(num){
