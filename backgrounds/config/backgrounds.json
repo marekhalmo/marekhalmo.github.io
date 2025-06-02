@@ -118,7 +118,7 @@
         "changesFont": true,
         "unreleased": true
     }, {
-        "alias": "test",
+        "alias": "animated-gradients-bold",
         "image": "test.png",
         "name": "Test",
         "animated": true,
