@@ -130,10 +130,14 @@
 					debug("...PARSED...");
 					
 					
-						
-					gtag('event', 'received', {
-					  'type': customData.target
-					});
+					try {	
+						gtag('event', 'received', {
+						  'type': customData.target,
+						  'background': customData.background
+						  });
+					} catch (error) {
+						console.error(error);
+					}
 					
 					if(customData.debug) {
 						document.getElementById('debug').classList.remove('hiddenMy');
