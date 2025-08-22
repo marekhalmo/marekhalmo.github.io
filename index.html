@@ -130,6 +130,11 @@
 					debug("...PARSED...");
 					
 					
+						
+					gtag('event', 'received', {
+					  'type': customData.target
+					});
+					
 					if(customData.debug) {
 						document.getElementById('debug').classList.remove('hiddenMy');
 					}
@@ -192,7 +197,7 @@
 						
 						if(customData.size) {
 							setVerseSize(customData.size);
-						}	
+						}
 						
 					} else if(customData.target == "announcements" || customData.target == "giving" || customData.target == "summary") {
 						if(customData.target != "giving") {
