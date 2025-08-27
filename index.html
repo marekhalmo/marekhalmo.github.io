@@ -131,9 +131,11 @@
 					
 					
 					try {	
+						const background = customData.background ? customData.background : "";
+					
 						gtag('event', 'received', {
 						  'type': customData.target,
-						  'background': customData.background
+						  'background': background
 						  });
 					} catch (error) {
 						console.error(error);
