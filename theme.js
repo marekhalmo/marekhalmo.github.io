@@ -46,6 +46,8 @@ function loadBackground(backgroundName, onBlack) {
 		loadedBackground = backgroundName;
 		disableBackground();
 		
+		gtag('event', 'background_change', { 'background': backgroundName });
+		
 		if(backgroundName.startsWith('http')) {
 			document.getElementById('background').src = backgroundName;
 			// document.getElementById('templateStyle').href =  base +	"backgrounds/blank.css"; // Should we clear the theme?
