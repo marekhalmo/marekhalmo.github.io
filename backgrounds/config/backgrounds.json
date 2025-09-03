@@ -124,5 +124,12 @@
         "animated": true,
         "changesFont": true,
         "unreleased": true
+    }, {
+        "alias": "pal",
+        "image": "pal.png",
+        "name": "Squares and hues",
+        "animated": true,
+        "changesFont": true,
+        "unreleased": true
     }
 ]
