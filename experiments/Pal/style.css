@@ -18,7 +18,7 @@ html, body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  background-attachment: scroll;
+  abackground-attachment: scroll;
   background-image:
     radial-gradient(75% 75% at 50% 50%, #F67853FF 3%, #073AFF00 40%, #073AFF00 93%),
     conic-gradient(from 15deg at 50% 50%, #67ADF5FF 4%, #B96FEFFF 13%, #FE75CEFF 21%, #F26C53FF 33%, #F26C53FF 69%, #FE75CEFF 81%, #B96FEFFF 88%, #67ADF5FF 96%);
