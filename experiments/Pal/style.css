@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+:root {
+  --blue: rgba(95, 170, 245, 1);
+  --red: rgba(250, 57, 189, 1);
+  --pink: rgba(245, 104, 61, 1);
+  --angle-multiplier: 1.2;
+  --scale-multiplier: 1.8;
+  
+  --bluea: #74abea;
+  --reda: #f5766b;
+  --pinka: #e55ebf;
+  
+  --shadow: #47185D60;
+}
+
+html, body {
+  overflow: hidden;
+  height: 100%;
+ 
+  background-image: radial-gradient(75% 75% at 50% 50%, #F67853FF 3%, #073AFF00 40%, #073AFF00 93%),conic-gradient(from 15deg at 50% 50%, #67ADF5FF 4%, #B96FEFFF 13%, #FE75CEFF 21%, #F26C53FF 33%, #F26C53FF 69%, #FE75CEFF 81%, #B96FEFFF 88%, #67ADF5FF 96%);
+}
+
+@keyframes boxMove2 {
+  0% { transform: scale(var(--initialScale)) perspective(10cm) rotate3d(-3, 1, 0, -25deg) rotate(var(--initialAngle)) }
+  100% { transform: scale(var(--endScale)) perspective(10cm) rotate3d(-3, 1, 0, -25deg) rotate(var(--endAngle)); }
+}
+
+@keyframes boxMove{
+  0% { transform: scale(calc(var(--scale-multiplier) * var(--initialScale))) rotate(calc(var(--angle-multiplier) * var(--initialAngle))) }
+  100% { transform:  scale(calc(var(--scale-multiplier) * var(--endScale))) rotate(calc(var(--angle-multiplier) * var(--endAngle))); }
+}
+
+.box {
+  top: calc(50% - 15vmin);
+  left: calc(50% - 15vmin);
+  width: 30vmin;
+  height: 30vmin;
+  position: absolute;
+  border-radius: 5vmin;
+  box-shadow: 0 0 6vmin var(--shadow);
+  animation: boxMove 12s linear infinite;  
+}
+
+.box0 { --initialScale: 1.00; --endScale: 1.50; --initialAngle: +10deg; --endAngle: +00deg; }
+.box1 { --initialScale: 1.50; --endScale: 2.00; --initialAngle: +0deg; --endAngle: -10deg; }
+.box2 { --initialScale: 2.00; --endScale: 2.50; --initialAngle: -10deg; --endAngle: -20deg; }
+.box3 { --initialScale: 2.50; --endScale: 3.00; --initialAngle: -20deg; --endAngle: -30deg; }
+.box4 { --initialScale: 3.00; --endScale: 3.50; --initialAngle: -30deg; --endAngle: -40deg; }
+.box5 { --initialScale: 3.50; --endScale: 4.00; --initialAngle: -40deg; --endAngle: -50deg; }
+.box6 { --initialScale: 4.00; --endScale: 4.50; --initialAngle: -50deg; --endAngle: -60deg; }
+.box7 { --initialScale: 4.50; --endScale: 5.00; --initialAngle: -60deg; --endAngle: -70deg; }
+.box8 { --initialScale: 5.00; --endScale: 5.50; --initialAngle: -70deg; --endAngle: -80deg; }
+.box9 { --initialScale: 5.50; --endScale: 6.00; --initialAngle: -80deg; --endAngle: -90deg; }
+.box10 { --initialScale: 6.00; --endScale: 6.50; --initialAngle: -90deg; --endAngle: -100deg; }
+.box11 { --initialScale: 6.50; --endScale: 7.00; --initialAngle: -100deg; --endAngle: -110deg; }
+.box12 { --initialScale: 7.00; --endScale: 7.50; --initialAngle: -110deg; --endAngle: -120deg; }
+
+@keyframes show {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes hide {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.box0 {
+  animation: boxMove 12s linear infinite, show 12s linear infinite;
+}
+
+.box6 {
+  animation: boxMove 12s linear infinite, hide 12s linear infinite;
+}
+
+.title{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20vmin;
+  height: 20vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 28vmin;
+  font-family: 'Varela Round', sans-serif;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+}
+
+.title::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20vmin;
+  height: 20vmin;
+  top: 38%;
+  border-radius: 50%;
+  box-shadow: 0 2vmin 0 -0.75vmin;
+}
