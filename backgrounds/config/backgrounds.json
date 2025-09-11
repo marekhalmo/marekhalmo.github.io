@@ -40,6 +40,13 @@
         "animated": true,
         "changesFont": true,
         "licences": ["theme_sunny_waves"]
+    },{
+        "alias": "pal",
+        "image": "pal.png",
+        "name": "Squares and hues",
+        "animated": true,
+        "changesFont": true,
+		"licences": ["theme_pal"]
     }, {
         "alias": "christmas-snow",
         "image": "christmas-snow.png",
@@ -121,13 +128,6 @@
         "alias": "animated-gradients-bold",
         "image": "test.png",
         "name": "Test",
-        "animated": true,
-        "changesFont": true,
-        "unreleased": true
-    }, {
-        "alias": "pal",
-        "image": "pal.png",
-        "name": "Squares and hues",
         "animated": true,
         "changesFont": true,
         "unreleased": true
