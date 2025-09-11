@@ -16,8 +16,8 @@
   --blue: rgba(95, 170, 245, 1);
   --red: rgba(250, 57, 189, 1);
   --pink: rgba(245, 104, 61, 1);
-  --angle-multiplier: 1.2;
-  --scale-multiplier: 1.8;
+  --angle-multiplier: 1.3;
+  --scale-multiplier: 2.2;
 
   --shadow: #47185D60;
 }
@@ -64,10 +64,10 @@ body::before {
 
 .box {
   position: absolute;
-  top: calc(50% - 15vmin);
-  left: calc(50% - 15vmin);
-  width: 30vmin;
-  height: 30vmin;
+  top: calc(50% - 10vmin);
+  left: calc(50% - 10vmin);
+  width: 20vmin;
+  height: 20vmin;
   border-radius: 5vmin;
   box-shadow: 0 0 6vmin var(--shadow);
 
@@ -92,7 +92,7 @@ body::before {
 .box0 {
   animation: boxMove 12s linear infinite, show 12s linear infinite;
 }
-.box6 {
+.box4 {
   animation: boxMove 12s linear infinite, hide 12s linear infinite;
 }
 
