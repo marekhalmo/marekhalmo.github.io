@@ -19,7 +19,7 @@
         "animated": true,
         "changesFont": true,
         "licences": ["theme_animated_blobs"],
-		"suggestion_order": 1
+		"suggestionPriority": 1
     }, {
         "alias": "animated-stars",
         "image": "animated-stars.png",
@@ -41,7 +41,7 @@
         "animated": true,
         "changesFont": true,
         "licences": ["theme_sunny_waves"],
-		"suggestion_order": 2
+		"suggestionPriority": 2
     },{
         "alias": "pal",
         "image": "pal.png",
@@ -49,7 +49,7 @@
         "animated": true,
         "changesFont": true,
 		"licences": ["theme_pal"],
-		"suggestion_order": 3
+		"suggestionPriority": 3
     }, {
         "alias": "christmas-snow",
         "image": "christmas-snow.png",
