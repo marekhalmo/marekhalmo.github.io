@@ -18,7 +18,8 @@
         "name": "Animated Blobs",
         "animated": true,
         "changesFont": true,
-        "licences": ["theme_animated_blobs"]
+        "licences": ["theme_animated_blobs"],
+		"suggestion_order": 1
     }, {
         "alias": "animated-stars",
         "image": "animated-stars.png",
@@ -39,14 +40,16 @@
         "name": "Sunny waves",
         "animated": true,
         "changesFont": true,
-        "licences": ["theme_sunny_waves"]
+        "licences": ["theme_sunny_waves"],
+		"suggestion_order": 2
     },{
         "alias": "pal",
         "image": "pal.png",
         "name": "Squares and hues",
         "animated": true,
         "changesFont": true,
-		"licences": ["theme_pal"]
+		"licences": ["theme_pal"],
+		"suggestion_order": 3
     }, {
         "alias": "christmas-snow",
         "image": "christmas-snow.png",
