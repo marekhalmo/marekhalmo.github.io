@@ -26,14 +26,16 @@
         "name": "Animated Stars",
         "animated": true,
         "changesFont": true,
-        "licences": ["theme_animated_stars"]
+        "licences": ["theme_animated_stars"],
+		"suggestionPriority": 4
     }, {
         "alias": "animated-gradients",
         "image": "animated-gradients.png",
         "name": "Animated Gradients",
         "animated": true,
         "changesFont": true,
-        "licences": ["theme_animated_gradients"]
+        "licences": ["theme_animated_gradients"],
+		"suggestionPriority": 5
     }, {
         "alias": "sunny-waves",
         "image": "sunny-waves.png",
