@@ -162,11 +162,11 @@ gradient-backdrop {
 /*  Decorative background stripes for text */
 #verse {
 	padding: 0 2.5em;
-	line-height: 1.6em;
+	line-height: 1.6;
 }
 
 #verse > div {
-    line-height: 1.5em;
+    line-height: 1.5;
     display: inline;
     color: #fff;
 	/* From https://css.glass */
@@ -194,7 +194,7 @@ gradient-backdrop {
 
 #verse .label {
   top: -0.28em;
-  /* font-weight: bold; */
+  /* font-weight: 700; */
 }
 
 .frame {

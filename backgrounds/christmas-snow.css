@@ -4,7 +4,8 @@
 
 @import url(https://fonts.googleapis.com/css2?family=Exo:wght@300&family=Roboto:wght@100&display=swap);
 body {
-	font-size: 1.2em;
+	font-size: 1.5vw;
+	font-size: 1.5vi;
 }
 
 #verses:not(.blackground) #verse, #announcement, #song, #timerMessage {
@@ -22,7 +23,7 @@ body {
 }
 
 #verses:not(.blackground) #verse {
-	line-height: 1em;
+	line-height: 1;
 }
 
 #verses:not(.blackground) #verse > div {
@@ -189,6 +190,6 @@ gradient-backdrop {
 
 #timer {
 	text-shadow: 0.1em 0.4em 0.4em #000a, 0 0 0.08em #000c;
-	font-weight: bold;
+	font-weight: 700;
 }
 /* end background */

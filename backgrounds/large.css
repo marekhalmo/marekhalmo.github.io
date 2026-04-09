@@ -10,6 +10,7 @@
 }
 
 body {
+	font-size: 1.3vw;
 	font-size: 1.3vi;
 }
 
@@ -23,4 +24,8 @@ body {
 
 .centered {
 	max-width: 100%;
+}
+
+#footer, #song-footer, #timer-footer, #announcement-footer {
+	padding: 0;
 }

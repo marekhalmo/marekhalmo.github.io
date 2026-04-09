@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-RSMVD9FDC4"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-RSMVD9FDC4');
+		</script>
 		<title>Chromecast Receiver</title>
 		<meta charset="utf-8"/>
 		<link rel="stylesheet" href="main.css"/>
@@ -33,7 +41,7 @@
 		<link id="templateStyle" rel="stylesheet" href="backgrounds/blank.css" title="temaplateStyle"/>
 		<script type="text/javascript" src="screenClient.js"></script>
 		<script>			
-			var base = 'https://maniacssoftware.github.io/';
+			var base = ''; //'https://maniacssoftware.github.io/';
 			startWebClient("192.168.0.111", 8082);
 		</script>
 	</head>
@@ -55,7 +63,7 @@
 		</div>
 		<div id="announcements" class="screen dimable">
 			<div id="announcementFrame" class="frame centered dimable enabled">
-				<div id="announcement" class="inframe fit sizable">Announcing that i announce the announcement</div>
+				<div id="announcement" class="inframe fit sizable xlarge medium"><h1 style="text-align: center;">Bohoslužby 22.12.2024</h1><p style="text-align: center;">Dnes nám bude božím slovom kázať sestra&nbsp;<b>Tralala Lalakova</b></p><ul>    <li><b>Streda 25. decembra</b>&nbsp;-&nbsp;zhromaždenie u nás nebude - ale BCC Bratislava má&nbsp;bohoslužby od <b>10:00</b></li><li><b>V Nedeľu 29. decembra</b>&nbsp;- Bohoslužby - káže brat <i style="">Fero Taraba</i></li><li><b>31. decembra o 20:00 </b>-<b>&nbsp;</b>Silvestrovské stretnutie</li></ul><p></p></div>
 			</div>
 			<div id="announcement-footer">
 				<span class="demoText hiddenMy">Via VerseCAST for Chromecast</span>
@@ -105,21 +113,19 @@
 		</div>
 		<div id="songs" class="screen dimable">
 			<div class="frame centered">
-				<div id="song" class="inframe centertext fit sizable">
+				<div id="song" class="inframe centertext fit sizable xxhuge xxxhuge huge">
 					<div>
-						<span>NOTIFIKÁCIA DOLE ZNAMENÁ</span>
+						<span><b>Zošli dážď, zošli dážď, dosť bolo sucha</b></span>
 					</div>
 					<div>
-						<span>ŽE TÁTO PIESEŇ BOLA IMPORTOVANÁ</span>
+						<span><i>Zošli dážď, zošli dážď, Svätého Ducha</i></span>
+					</div>
+					<br>
+					<div>
+						<span><u>Zošli dážď, zošli dážď, nové Turíce</u></span>
 					</div>
 					<div>
-						<span>A MOŽNO POTREBUJE SKONTROLOVAŤ ROZLOŽENIE.</span>
-					</div>
-					<div>
-						<span>PO ULOŽENÍ PIESNE SA INDIKÁTOR</span>
-					</div>
-					<div>
-						<span>ZMENÍ NA "PRIPRAVENÉ"</span>
+						<span>Zošli dážď, zošli dážď, rozjasaj srdce</span>
 					</div>
 				</div>
 			</div>
@@ -135,7 +141,7 @@
 					<div id="countdown" class="dimable zeroSize">
 						<span id="hours"></span><span id="minutes"></span><span id="seconds"></span>
 					</div>
-					<div id="timerMessage"></div>
+					<div id="timerMessage"><h1>Welcome</h1><div>Service will start shortly</div></div>
 				</div>
 			</div>
 			<div id="timer-footer">

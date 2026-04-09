@@ -1,6 +1,6 @@
 /* Over the rainbow font */
 /**@import url(https://fonts.googleapis.com/css?family=Over+the+Rainbow);
-	
+
 
 @import url(https://fonts.googleapis.com/css?family=Ballet);
 
@@ -28,6 +28,10 @@ html {
   
 }
 
+b {
+	font-weight: 700;
+}
+
 #keepAlive {
 	display: none;
 }
@@ -39,8 +43,14 @@ body {
   background-color: black;
   font-family: 'Roboto';
   letter-spacing: 0.05em;
-  
+  /* Fallback */
+  font-size: 1.1vw;
   font-size: 1.1vi; /* 3vh; 1vi; 1.2vi force font sizes relative to viewport */
+
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 img[src="about:blank"] {
@@ -75,6 +85,15 @@ img[src="about:blank"] {
 	transform:translate(-50%, -50%);
 	max-width: 85%;
 	width: 97%;
+}
+
+.uppercase {
+	text-transform: uppercase; 
+}
+
+.br-spacer {
+  display: block;
+  height: 0.75em;
 }
 
 .centertext, .ql-align-center {
@@ -145,6 +164,10 @@ img[src="about:blank"] {
 	opacity: 1;
 }
 
+#announcements ul {
+	padding-inline-start: 1.9em;
+}
+
 #announcements img {
   /* object-fit: contain; */
 }
@@ -211,6 +234,10 @@ img[src="about:blank"] {
 }
 */
 
+#splash {
+	text-shadow: 0 0.5em 1.5em #0127, 0 0.1em 1px #0005, 0 0.3em 0.4em #0003;
+}
+
 #splash h1 {
   /* #font-family: 'Ballet', sans-serif; */
   font-family: 'Anton', sans-serif;
@@ -227,7 +254,11 @@ img[src="about:blank"] {
   /* #font-family: 'Dancing script', serif; */
   font-size: 3em;
   margin: 0px;
-  margin-top: -1em;
+  margin-top: -0.6em;
+}
+
+#splash #press {
+	font-size: 2em;
 }
 
 #verses, #announcements, #songs, #timers {
@@ -270,7 +301,7 @@ img[src="about:blank"] {
 
 #verse, #song {
 	text-justify: inter-character;
-	/*line-height: 1.4em;*/
+	/*line-height: 1.4;*/
 }
 
 #verse {
@@ -282,7 +313,7 @@ img[src="about:blank"] {
 }
 
 #announcement li {
-	line-height: 1.3em;
+	line-height: 1.3;
 }
 
 /* Remove new lines from biblical text */
@@ -291,7 +322,7 @@ img[src="about:blank"] {
 }
 
 #verse .heading {
-	  font-weight: bold;
+	  font-weight: 700;
 }
  
 #verse .label {
@@ -328,6 +359,11 @@ img[src="about:blank"] {
 	display: none;
 }
 
+/* Bug - Bahasa indonesia TB - Lukas 10:1-2 */
+#verse .chapter .r {
+	display: none;
+}
+
 #verse .q1 .label, #verse .q1 .label, #verse .q1 .label {
 	margin-left: 15px;
 }
@@ -347,7 +383,7 @@ img[src="about:blank"] {
 }
 
 #verse .wj, #verse .nd {
-	font-weight: bold;
+	font-weight: 700;
 }
 
 #verseasd .verse .content {
@@ -525,6 +561,6 @@ img[src="about:blank"] {
 	transition: object-fit 0.3s ease;
 }
 
-#images  .force-contain {
+#images .force-contain {
 	object-fit: contain;
 }

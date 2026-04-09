@@ -28,14 +28,14 @@ canvas {
 }
 
 #countdown {
-	font-weight: bold;
+	font-weight: 700;
 	text-shadow: 0px 0px 0.2em rgba(69, 121, 244, 0.5);
 }
 
 /*  Decorative background stripes for text */
 #verses:not(.blackground) #verse {
 	//padding: 0 1.3em;
-	line-height: 1.6em;
+	line-height: 1.6;
 }
 
 #song {
@@ -43,7 +43,7 @@ canvas {
 }
 
 #verses:not(.blackground) #verse > div {
-    line-height: 1.5em;
+    line-height: 1.5;
     color: #fff;
 	/* padding-right: 1px;	*/
 	/* background: black;
@@ -53,7 +53,7 @@ canvas {
 }
 
 #song > div > span {
-	line-height: 1.5em;
+	line-height: 1.5;
     color: #fff;
     /* background: black;
     padding: 0 1em;
@@ -84,7 +84,7 @@ canvas {
 
 #verses:not(.blackground) #verse .label {
   top: -0.28em;
-  font-weight: bold;
+  font-weight: 700;
   color: white;
 }
 

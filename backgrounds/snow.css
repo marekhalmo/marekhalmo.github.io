@@ -17,7 +17,7 @@
 /*  Decorative background stripes for text */
 #verses:not(.blackground) #verse {
 	padding: 0 1.3em;
-	line-height: 1.6em;
+	line-height: 1.6;
 }
 
 #song {
@@ -26,7 +26,7 @@
 
 
 #song > div > span {
-	line-height: 1.5em;
+	line-height: 1.5;
     background: white;
     padding: 0 1em;
     -webkit-box-decoration-break: clone;
@@ -34,7 +34,7 @@
 }
 
 #verses:not(.blackground) #verse > div {
-	line-height: 1.5em;
+	line-height: 1.5;
     display: inline;
 	padding-right: 1px;
 	background: white;    
@@ -64,7 +64,7 @@
 
 #verses:not(.blackground) #verse .label {
   top: -0.28em;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .frame {
