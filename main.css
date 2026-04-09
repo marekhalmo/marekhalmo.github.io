@@ -44,8 +44,8 @@ body {
   font-family: 'Roboto';
   letter-spacing: 0.05em;
   /* Fallback */
-  font-size: 1.1vw;
-  font-size: 1.1vi; /* 3vh; 1vi; 1.2vi force font sizes relative to viewport */
+  font-size: 3vw;
+  font-size: 3vi; /* 3vh; 1vi; 1.2vi force font sizes relative to viewport */
 
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
@@ -252,21 +252,17 @@ img[src="about:blank"] {
   /* #font-family: 'Over the Rainbow', serif; */
   font-family: 'Great Vibes', serif;
   /* #font-family: 'Dancing script', serif; */
-  font-size: 3em;
+  font-size: 1em;
   margin: 0px;
   margin-top: -0.6em;
 }
 
 #splash #press {
-	font-size: 2em;
+	font-size: 0.7em;
 }
 
 #verses, #announcements, #songs, #timers {
 	text-shadow: 0px 2px 8px black;
-}
-
-#announcements {
-  font-size: 3em;
 }
 
 #announcement h1, #announcement h2, #announcement p {
@@ -281,12 +277,12 @@ img[src="about:blank"] {
    margin-left: 1em;
 }
 
-#verses, #songs, #timers {
-	font-size: 3em;
+#verses, #songs, #timers, #announcements {
+	font-size: 1em;
 }
 
 #timers {
-	font-size: 2em;
+	font-size: 0.7em;
 	/* line-height: */
 }
 
