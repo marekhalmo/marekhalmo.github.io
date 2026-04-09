@@ -26,6 +26,12 @@ html {
   right: 0px;
   bottom: 0px;
   
+  /* Force the mobile engine to stop scaling text */
+	-webkit-text-size-adjust: none !important;
+	-moz-text-size-adjust: none !important;
+	-ms-text-size-adjust: none !important;
+	text-size-adjust: none !important;
+
 }
 
 b {
@@ -46,11 +52,13 @@ body {
   /* Fallback */
   font-size: 3vw;
   font-size: 3vi; /* 3vh; 1vi; 1.2vi force font sizes relative to viewport */
-
+  
+  /*
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  */
 }
 
 img[src="about:blank"] {
