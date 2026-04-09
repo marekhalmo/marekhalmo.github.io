@@ -49,12 +49,8 @@
 	margin-bottom: 0.7em;
 }
 
-#verses:not(.blackground) {
-	font-size: 2.6em;
-}
-
-#songs, #announcements {
-	font-size: 2.6em;
+#songs, #announcements, #verses:not(.blackground) {
+	font-size: 0.85em;
 }
 
 #verses:not(.blackground) #verse .label {
